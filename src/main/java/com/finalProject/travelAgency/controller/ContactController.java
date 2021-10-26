@@ -3,12 +3,11 @@ package com.finalProject.travelAgency.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @Controller
-public class IndexController {
+public class ContactController {
 
-    @GetMapping("/index")
+    @GetMapping("/contact")
     public String helloWorld(){
-        return "index";
+        return "contact";
     }
 }
