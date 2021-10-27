@@ -1,5 +1,6 @@
 package com.finalProject.travelAgency.service;
 
+import com.finalProject.travelAgency.model.Tour;
 import com.finalProject.travelAgency.repository.TourRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +11,9 @@ public class TourService {
 
     public TourService(TourRepository tourRepository) {
         this.tourRepository = tourRepository;
+    }
+
+    public Tour save(Tour entity){
+        return tourRepository.save(entity);
     }
 }
