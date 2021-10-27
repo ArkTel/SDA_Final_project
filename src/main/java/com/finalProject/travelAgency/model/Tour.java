@@ -3,10 +3,7 @@ package com.finalProject.travelAgency.model;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,7 +16,10 @@ public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "valueFrom")
     private String from;
+    @Column(name = "valueTo")
     private String to;
     private LocalDateTime arrivalDate;
     private LocalDateTime departureDate;
