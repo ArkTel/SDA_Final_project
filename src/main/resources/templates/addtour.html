@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>About - Travel</title>
+        <title>Contact - Travel</title>
         <meta name="description" content="">
 <!-- 
 Travel Template
@@ -30,59 +30,77 @@ http://www.templatemo.com/tm-409-travel
 
         <div id="header" class="alt" th:include="menu :: title-menu" />  <!-- /.site-header -->
 
-        <div class="page-top" id="templatemo_about">
+        <div class="page-top" id="templatemo_contact">
         </div> <!-- /.page-header -->
 
-        <div class="middle-content">
+        <div class="contact-page">
             <div class="container">
-            
-                <div class="row"><!-- first row -->
-                
-                	<div class="col-md-12"><!-- first column -->
-                        <div class="widget-item">
-                            <h3 class="widget-title">Our Company</h3>
-                            <div class="sample-thumb">
-                                <img src="images/about_1.jpg" alt="about us" title="about us">
-                            </div> <!-- /.sample-thumb -->
-                            <h4 class="consult-title">Vestibulum sodales tempus lacus</h4>
-                            <p>Duis mattis neque vel rutrum finibus. Mauris vel tincidunt purus. Aenean laoreet ornare purus. Nunc condimentum augue sed massa iaculis, vel blandit sapien consectetur. Curabitur eu aliquam erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis interdum.<br><br>
-							Suspendisse convallis congue tellus, nec ultricies sem molestie ac. Nunc lobortis elit orci, vitae suscipit urna dictum id. Nullam at elementum magna. Vivamus sit amet ipsum tortor. Nullam molestie eros quis risus pellentesque, eget pellentesque mauris placerat.</p>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Skąd: <strong>Warszawa</strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Dokąd: <strong>Nowy York</strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Data wyjazdu: <strong>13-12-2021</strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Data powrotu: <strong>23-12-2021</strong></span>
-                        </div>
-                        <!-- /.widget-item -->
-                    </div> <!-- /.col-md-4 -->
+                <div class="row">
+                    <div class="col-md-10 col-sm-6">
+                        <h3 class="widget-title">ADD NEW TOUR</h3>
+                        <div class="contact-form">
+                            <form name="contactform" id="contactform" action="#" th:action="@{/addtour}" method="post" th:object="${newTour}">
+                                <p>
+                                    <input name="from" type="text" id="from" placeholder="Starting city">
+                                </p>
+                                <p>
+                                    <input name="to" type="text" id="to" placeholder="Destination city">
+                                </p>
+                                <p>
+                                    <input name="arrivalDate" type="date" id="arrivalDate" placeholder="Arrival date">
+                                </p>
+                                <p>
+                                    <input name="departureDate" type="date" id="departureDate" placeholder="Departure date">
+                                </p>
+                                <div class="form-group row">
+                                    <label for="question" class="col-2 col-form-label">Type of offer</label>
+                                <div class="col-1">
+                                     <label class="radio-inline"><input type="radio" id="question" name="offersType" value="BB">BB</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="radio-inline"><input type="radio" id="question" name="offersType" value="FB">FB</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="radio-inline"><input type="radio" id="question" name="offersType" value="HB">HB</label>
+                                </div>
+                                <div class="col-1">
+                                    <label class="radio-inline"><input type="radio" id="question" name="offersType" value="AI">AI</label>
+                                </div>
 
-<!--                    <div class="col-md-6">&lt;!&ndash; second column &ndash;&gt;-->
-<!--                        <div class="widget-item">-->
-<!--                            <h3 class="widget-title">Our Team</h3>-->
-<!--                            <div class="sample-thumb">-->
-<!--                                <img src="images/about_2.jpg" alt="company" title="company">-->
-<!--                            </div> &lt;!&ndash; /.sample-thumb &ndash;&gt;-->
-<!--                            <h4 class="consult-title">Cum sociis natoque penatibus et magnis</h4>-->
-<!--                            <p>Curabitur eu aliquam erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br>-->
-<!--							In hac habitasse platea dictumst. Nulla mollis nisl id ipsum faucibus lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sit amet ultricies mauris. Nulla fermentum nisl felis, id blandit nunc vehicula vel.</p>-->
-<!--                        </div> &lt;!&ndash; /.widget-item &ndash;&gt;-->
-<!--                    </div> &lt;!&ndash; /.col-md-4 &ndash;&gt;-->
-                    
-                    
-                    
-                </div> <!-- /.row first -->
-                
-                
-                
-            </div> <!-- /.container -->
-        </div> <!-- /.middle-content -->
+                                </div>
+                                <p>
+                                    <input name="priceForAdult" type="text" id="priceForAdult" placeholder="Price for adult">
+                                </p>
+                                <p>
+                                    <input name="priceForChild" type="text" id="priceForChild" placeholder="Price for child">
+                                </p>
+
+                                <div class="form-group row">
+                                    <label for="question" class="col-2 col-form-label">Is the tour being promoted</label>
+                                    <div class="col-3">
+                                        <label class="radio-inline"><input type="radio" id="question" name="isPromoted" value="1">YES</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <label class="radio-inline"><input type="radio" id="question" name="isPromoted" value="0">NO</label>
+                                    </div>
+                                </div>
+                                <p>
+                                    <input name="availablePlacesForAdult" type="text" id="availablePlacesForAdult" placeholder="Available places for adult">
+                                </p>
+                                <p>
+                                    <input name="availablePlacesForChildren" type="text" id="availablePlacesForChildren" placeholder="Available places for child">
+                                </p>
+
+                                <input type="submit" class="mainBtn" id="submit" value="Send Message">
+                            </form>
+                        </div> <!-- /.contact-form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div class="partner-list">
             <div class="container">
@@ -156,6 +174,28 @@ http://www.templatemo.com/tm-409-travel
         <script src="js/bootstrap.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <!-- Google Map -->
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="js/vendor/jquery.gmap3.min.js"></script>
+        
+        <!-- Google Map Init-->
+        <script type="text/javascript">
+            jQuery(function($){
+                $('.first-map, .map-holder').gmap3({
+                    marker:{
+                        address: '16.8496189,96.1288854' 
+                    },
+                        map:{
+                        options:{
+                        zoom: 16,
+                        scrollwheel: false,
+                        streetViewControl : true
+                        }
+                    }
+                });
+            });
+        </script>
         <!-- templatemo 409 travel -->
     </body>
 </html>
