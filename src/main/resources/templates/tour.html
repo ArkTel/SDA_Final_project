@@ -3,9 +3,13 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout}">
 <head>
     <meta charset="utf-8">
-    <title>About - Travel</title>
+    <title>Tour - Travel</title>
     <meta name="description" content="">
 <!-- 
 Travel Template
@@ -48,7 +52,35 @@ http://www.templatemo.com/tm-409-travel
                             <p>Duis mattis neque vel rutrum finibus. Mauris vel tincidunt purus. Aenean laoreet ornare purus. Nunc condimentum augue sed massa iaculis, vel blandit sapien consectetur. Curabitur eu aliquam erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis interdum.<br><br>
 							Suspendisse convallis congue tellus, nec ultricies sem molestie ac. Nunc lobortis elit orci, vitae suscipit urna dictum id. Nullam at elementum magna. Vivamus sit amet ipsum tortor. Nullam molestie eros quis risus pellentesque, eget pellentesque mauris placerat.</p>
                         </div>
-
+                        <div th:object="${tour}">
+                        <div class="col-md-3">
+                            <span>Skąd: <strong th:text="${tour.from}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Dokąd: <strong th:text="${tour.to}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Data wyjazdu: <strong th:text="${tour.arrivalDate}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Data powrotu: <strong th:text="${tour.departureDate}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Typ oferty: <strong th:text="${tour.offersType}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Cena za osobę dorosłą: <strong th:text="${tour.priceForAdult}">zł</strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Cena za dziecko: <strong th:text="${tour.priceForChild}">zł</strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Ilość miejsc dla osób dorosłych: <strong th:text="${tour.availablePlacesForAdult}"></strong></span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Ilość miejsc dla dzieci: <strong th:text="${tour.availablePlacesForChildren}"></strong></span>
+                        </div>
+                        </div>
                         <!-- /.widget-item -->
                     </div> <!-- /.col-md-4 -->
 
