@@ -2,11 +2,13 @@ package com.finalProject.travelAgency.model;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Data
@@ -21,8 +23,10 @@ public class Tour {
     private String from;
     @Column(name = "valueTo")
     private String to;
-    private LocalDateTime arrivalDate;
-    private LocalDateTime departureDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate arrivalDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate departureDate;
     private String offersType;
     private BigDecimal priceForAdult;
     private BigDecimal priceForChild;
@@ -30,7 +34,7 @@ public class Tour {
     private int availablePlacesForAdult;
     private int availablePlacesForChildren;
 
-    public Tour(Long id, String from, String to, LocalDateTime arrivalDate, LocalDateTime departureDate, String offersType, BigDecimal priceForAdult, BigDecimal priceForChild, boolean isPromoted, int availablePlacesForAdult, int availablePlacesForChildren) {
+    public Tour(Long id, String from, String to, LocalDate arrivalDate, LocalDate departureDate, String offersType, BigDecimal priceForAdult, BigDecimal priceForChild, boolean isPromoted, int availablePlacesForAdult, int availablePlacesForChildren) {
         this.id = id;
         this.from = from;
         this.to = to;
