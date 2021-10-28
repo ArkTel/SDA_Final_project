@@ -16,4 +16,7 @@ public class TourService {
     public Tour save(Tour entity){
         return tourRepository.save(entity);
     }
+    public Tour getTour(Long id){
+        return tourRepository.getById(id);
+    }
 }
