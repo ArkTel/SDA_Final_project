@@ -21,11 +21,17 @@ public class TourController {
     }
 
     @GetMapping("/tour/{tourId}")
-    public String getTour(@PathVariable("tourId") Long tourId, Model model){
+    public String getTourById(@PathVariable("tourId") Long tourId, Model model){
         Tour tour = tourService.getTour(tourId);
         model.addAttribute("tour", tour);
         return "tour";
     }
+//    @GetMapping("/tour")
+//    public String getTour(){
+////        Tour tour = tourService.getTour(tourId);
+////        model.addAttribute("tour", tour);
+//        return "tour";
+//    }
 
     @GetMapping("/addtour")
     public String getAddTour(){
