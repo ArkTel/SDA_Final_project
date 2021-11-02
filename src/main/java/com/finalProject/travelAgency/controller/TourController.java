@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
+
 @Controller
 public class TourController {
 
@@ -42,6 +44,14 @@ public class TourController {
     public RedirectView postAddTour(@ModelAttribute Tour newTour){
         tourService.save(newTour);
         return new RedirectView("/addtour");
+    }
+
+    //find showTours
+    @GetMapping("/alltours")
+    public String getAllTours(Model model){
+        List<Tour> listOfTours = tourService.getAllTours();
+        model.addAttribute("tours",listOfTours);
+        return "alltours";
     }
 
 
