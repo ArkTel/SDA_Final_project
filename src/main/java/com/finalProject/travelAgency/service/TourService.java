@@ -4,6 +4,9 @@ import com.finalProject.travelAgency.model.Tour;
 import com.finalProject.travelAgency.repository.TourRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class TourService {
 
@@ -19,4 +22,5 @@ public class TourService {
     public Tour getTour(Long id){
         return tourRepository.getById(id);
     }
+    public List<Tour> getAllTours () {return tourRepository.findAll();}
 }
