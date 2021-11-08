@@ -78,10 +78,7 @@ http://www.templatemo.com/tm-409-travel
                                 <div class="form-group row">
                                     <label for="question" class="col-2 col-form-label">Is the tour being promoted</label>
                                     <div class="col-3">
-                                        <label class="radio-inline"><input type="radio"  name="isPromoted" value="1">YES</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <label class="radio-inline"><input type="radio"  name="isPromoted" value="0">NO</label>
+                                        <label class="radio-inline"><input type="checkbox"  name="isPromoted" th:checked="${isPromoted}" value="1">YES</label>
                                     </div>
                                 </div>
                                 <p>
@@ -89,6 +86,12 @@ http://www.templatemo.com/tm-409-travel
                                 </p>
                                 <p>
                                     <input name="availablePlacesForChildren" type="text" id="availablePlacesForChildren" placeholder="Available places for child">
+                                </p>
+                                <p>
+                                    <input name="tourDescription" type="text" id="tourDescription" placeholder="Description of the trip">
+                                </p>
+                                <p>
+                                    <input name="imgLink" type="text" id="imgLink" placeholder="Link to the tour photo">
                                 </p>
 
                                 <input type="submit" class="mainBtn" id="submit" value="Send Message">
