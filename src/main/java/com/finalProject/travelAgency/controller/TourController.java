@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class TourController {
@@ -53,6 +54,8 @@ public class TourController {
         model.addAttribute("tours",listOfTours);
         return "alltours";
     }
+
+
 
 
 }
