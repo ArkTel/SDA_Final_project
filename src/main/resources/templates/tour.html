@@ -8,172 +8,247 @@
     <meta charset="utf-8">
     <title>Tour - Travel</title>
     <meta name="description" content="">
-<!-- 
-Travel Template
-http://www.templatemo.com/tm-409-travel
--->
-        <meta name="viewport" content="width=device-width">
-		<meta name="author" content="templatemo">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
-        
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.css">
-        <link rel="stylesheet" href="/css/animate.css">
-        <link rel="stylesheet" href="/css/templatemo_misc.css">
-        <link rel="stylesheet" href="/css/templatemo_style.css">
+    <!--
+    Travel Template
+    http://www.templatemo.com/tm-409-travel
+    -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="templatemo">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
 
-        <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/templatemo_misc.css">
+    <link rel="stylesheet" href="/css/templatemo_style.css">
+    <link rel="stylesheet" href="/css/style_tour.css">
 
-        <div id="header" class="alt" th:include="menu :: title-menu" />  <!-- /.site-header -->
+    <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
 
-        <div class="page-top" id="templatemo_about">
-        </div> <!-- /.page-header -->
+<div id="header" class="alt" th:include="menu :: title-menu"/>  <!-- /.site-header -->
 
-        <div class="middle-content">
-            <div class="container">
-            
-                <div class="row"><!-- first row -->
-                
-                	<div class="col-md-12"><!-- first column -->
-                        <div class="widget-item">
-                            <h3 class="widget-title">Our Company</h3>
-                            <div class="sample-thumb">
-                                <img src="/images/about_1.jpg" alt="about us" title="about us">
-                            </div> <!-- /.sample-thumb -->
-                            <h4 class="consult-title">Vestibulum sodales tempus lacus</h4>
-                            <p>Duis mattis neque vel rutrum finibus. Mauris vel tincidunt purus. Aenean laoreet ornare purus. Nunc condimentum augue sed massa iaculis, vel blandit sapien consectetur. Curabitur eu aliquam erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis interdum.<br><br>
-							Suspendisse convallis congue tellus, nec ultricies sem molestie ac. Nunc lobortis elit orci, vitae suscipit urna dictum id. Nullam at elementum magna. Vivamus sit amet ipsum tortor. Nullam molestie eros quis risus pellentesque, eget pellentesque mauris placerat.</p>
-                        </div>
-                        <div th:object="${tour}">
-                        <div class="col-md-3">
-                            <span>Skąd: <strong th:text="${tour.from}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Dokąd: <strong th:text="${tour.to}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Data wyjazdu: <strong th:text="${tour.arrivalDate}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Data powrotu: <strong th:text="${tour.departureDate}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Typ oferty: <strong th:text="${tour.offersType}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Cena za osobę dorosłą: <strong th:text="${tour.priceForAdult}">zł</strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Cena za dziecko: <strong th:text="${tour.priceForChild}">zł</strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Ilość miejsc dla osób dorosłych: <strong th:text="${tour.availablePlacesForAdult}"></strong></span>
-                        </div>
-                        <div class="col-md-3">
-                            <span>Ilość miejsc dla dzieci: <strong th:text="${tour.availablePlacesForChildren}"></strong></span>
-                        </div>
-                        </div>
-                        <!-- /.widget-item -->
-                    </div> <!-- /.col-md-4 -->
+<div class="page-top" id="templatemo_about">
+</div> <!-- /.page-header -->
 
-<!--                    <div class="col-md-6">&lt;!&ndash; second column &ndash;&gt;-->
-<!--                        <div class="widget-item">-->
-<!--                            <h3 class="widget-title">Our Team</h3>-->
-<!--                            <div class="sample-thumb">-->
-<!--                                <img src="images/about_2.jpg" alt="company" title="company">-->
-<!--                            </div> &lt;!&ndash; /.sample-thumb &ndash;&gt;-->
-<!--                            <h4 class="consult-title">Cum sociis natoque penatibus et magnis</h4>-->
-<!--                            <p>Curabitur eu aliquam erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br>-->
-<!--							In hac habitasse platea dictumst. Nulla mollis nisl id ipsum faucibus lacinia. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sit amet ultricies mauris. Nulla fermentum nisl felis, id blandit nunc vehicula vel.</p>-->
-<!--                        </div> &lt;!&ndash; /.widget-item &ndash;&gt;-->
-<!--                    </div> &lt;!&ndash; /.col-md-4 &ndash;&gt;-->
-                    
-                    
-                    
-                </div> <!-- /.row first -->
-                
-                
-                
-            </div> <!-- /.container -->
-        </div> <!-- /.middle-content -->
+<div class="middle-content">
+    <div class="container">
 
-        <div class="partner-list">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner1.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner2.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner3.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner1.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner2.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item last">
-                            <img src="/images/partners/partner3.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.partner-list -->
+        <div class="row"><!-- first row -->
+
+            <div class="col-md-12"><!-- first column -->
+                <div class="widget-item">
+                    <h3 class="widget-title">Our Company</h3>
+                    <div class="sample-thumb">
+                        <img src="/images/about_1.jpg" alt="about us" title="about us">
+                    </div> <!-- /.sample-thumb -->
+                    <h4 class="consult-title">Vestibulum sodales tempus lacus</h4>
+                    <p>Duis mattis neque vel rutrum finibus. Mauris vel tincidunt purus. Aenean laoreet ornare purus.
+                        Nunc condimentum augue sed massa iaculis, vel blandit sapien consectetur. Curabitur eu aliquam
+                        erat. Etiam sollicitudin est eu turpis dapibus aliquet. Ut vitae lacus vel nulla iaculis
+                        interdum.<br><br>
+                        Suspendisse convallis congue tellus, nec ultricies sem molestie ac. Nunc lobortis elit orci,
+                        vitae suscipit urna dictum id. Nullam at elementum magna. Vivamus sit amet ipsum tortor. Nullam
+                        molestie eros quis risus pellentesque, eget pellentesque mauris placerat.</p>
+                </div>
+                <div th:object="${tour}">
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>SKĄD:</strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.from}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>DOKĄD:</strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.to}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>TYP OFERTY:</strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.offersType}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>DATA WYJAZDU:</strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.arrivalDate}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>DATA POWROTU:</strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.departureDate}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>Cena za osobę dorosłą: </strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.priceForAdult}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>Cena za dziecko: </strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.priceForChild}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>Ilość miejsc dla osób
+                                        dorosłych: </strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.availablePlacesForAdult}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4">
+                        <article class="box-icon-classic">
+                            <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                                <div class="unit-body">
+                                    <h5 class="box-icon-classic-title"><strong>Ilość miejsc dla dzieci: </strong></h5>
+                                    <p class="box-icon-classic-text" th:text="${tour.availablePlacesForChildren}"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <button class="btn-lg">Zakup</button>
+                        </a>
+                        <a href="#">
+                            <button class="btn-lg">Edytuj</button>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- /.widget-item -->
+            </div>
 
 
+        </div> <!-- /.row first -->
 
-        <div class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="footer-logo">
-                            <a href="index.html">
-                                <img src="/images/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div> <!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="copyright">
-                            <span>Copyright &copy; 2014 <a href="#">Company Name</a></span>
-                        </div>
-                    </div> <!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <ul class="social-icons">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                            <li><a href="#" class="fa fa-flickr"></a></li>
-                            <li><a href="#" class="fa fa-rss"></a></li>
-                        </ul>
-                    </div> <!-- /.col-md-4 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.site-footer -->
 
-        <script src="/js/vendor/jquery-1.11.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="/js/bootstrap.js"></script>
-        <script src="/js/plugins.js"></script>
-        <script src="/js/main.js"></script>
-        <!-- templatemo 409 travel -->
-    </body>
+    </div> <!-- /.container -->
+</div> <!-- /.middle-content -->
+
+<div class="partner-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item last">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.partner-list -->
+
+
+<div class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="/images/logo.png" alt="">
+                    </a>
+                </div>
+            </div> <!-- /.col-md-4 -->
+            <div class="col-md-4 col-sm-4">
+                <div class="copyright">
+                    <span>Copyright &copy; 2014 <a href="#">Company Name</a></span>
+                </div>
+            </div> <!-- /.col-md-4 -->
+            <div class="col-md-4 col-sm-4">
+                <ul class="social-icons">
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                    <li><a href="#" class="fa fa-flickr"></a></li>
+                    <li><a href="#" class="fa fa-rss"></a></li>
+                </ul>
+            </div> <!-- /.col-md-4 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.site-footer -->
+
+<script src="/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+<!-- templatemo 409 travel -->
+</body>
 </html>
