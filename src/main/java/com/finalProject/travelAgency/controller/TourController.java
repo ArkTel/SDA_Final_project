@@ -55,7 +55,11 @@ public class TourController {
         return "alltours";
     }
 
-
-
+    @GetMapping("/archive")
+    public String getToursArchive(Model model){
+        List<Tour> listOfTours = tourService.getListOfPastTours();
+        model.addAttribute("tours",listOfTours);
+        return "archive";
+    }
 
 }

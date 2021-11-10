@@ -4,8 +4,10 @@ import com.finalProject.travelAgency.model.Tour;
 import com.finalProject.travelAgency.repository.TourRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class TourService {
@@ -23,4 +25,24 @@ public class TourService {
         return tourRepository.getById(id);
     }
     public List<Tour> getAllTours () {return tourRepository.findAll();}
+
+    public List<Tour> getListOfPromotedTours(){
+        return getAllTours().stream()
+                .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
+                .filter(tour -> tour.getIsPromoted() == 1)
+                .collect(Collectors.toList());
+    }
+
+    public List<Tour> getListOfUpcomingTours(){
+        return getAllTours().stream()
+                .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
+                .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now().plusDays(30)))
+                .collect(Collectors.toList());
+    }
+
+    public List<Tour> getListOfPastTours(){
+        return getAllTours().stream()
+                .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now()))
+                .collect(Collectors.toList());
+    }
 }
