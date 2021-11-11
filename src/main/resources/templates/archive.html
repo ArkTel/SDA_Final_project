@@ -1,26 +1,32 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="thymeleaf.org/extras/spring-security"
       layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="utf-8">
+    <title>Tour archive</title>
+    <meta name="description" content="">
     <head>
         <meta charset="utf-8">
-        <title>Travel Responsive Web Template</title>
+        <title>Contact - Travel</title>
         <meta name="description" content="">
-<!-- 
+<!--
 Travel Template
 http://www.templatemo.com/tm-409-travel
 -->
         <meta name="viewport" content="width=device-width">
 		<meta name="author" content="templatemo">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
-        
+
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/font-awesome.css">
         <link rel="stylesheet" href="/css/animate.css">
         <link rel="stylesheet" href="/css/templatemo_misc.css">
         <link rel="stylesheet" href="/css/templatemo_style.css">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -28,54 +34,48 @@ http://www.templatemo.com/tm-409-travel
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <div id="header" class="alt" th:include="menu :: title-menu" /> <!-- /.site-header -->
+        <div id="header" class="alt" th:include="menu :: title-menu" />  <!-- /.site-header -->
 
+        <div class="page-top" id="templatemo_contact">
+        </div> <!-- /.page-header -->
 
-        <div class="flexslider" >
-            <ul class="slides" th:each="tour:${promotedTours}">
-                <li>
-                    <div class="overlay"></div>
-                    <img th:src="${tour.imgLink}" alt="Special 1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-5 col-lg-4">
-                                <div class="flex-caption visible-lg">
-
-                                    <h3 class="title" th:text="${tour.to}"></h3>
-                                    <p th:text="${tour.tourDescription}"></p>
-                                    <a href="#" class="slider-btn">Pre-booking</a>
+        <div class="contact-page">
+            <div class="container">
+                <div class="d-flex flex-column">
+                        <h3 class="widget-title">Tour archive</h3>
+                    <br>
+                    <tr th:each="tour:${tours}">
+                    <section class="d-flex flex-column">
+                        <div class="container mx-auto p-2">
+                            <button type="button" class="btn btn-light border-secondary align-items-center w-100  mx-auto d">
+                                <div class="d-flex flex row">
+                                    <div class="col mx-auto text-left text-">Cel podróży:
+                                        <td th:text="${tour.getTo()}"/> </div>
+                                    <div class="col mx-auto text-left">Miejsce wylotu:
+                                        <td th:text="${tour.getFrom()}"/>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex mx-auto flex-column ">
+                                            <div class="col mx-auto text-left">Koszt:
+                                                <div class="col mx-auto text-left">osoba dorosła  <td th:text="${tour.getPriceForAdult()}"/>
+                                                </div>
+                                                <div class="col mx-auto text-left">dziecko  <td th:text="${tour.getPriceForChild()}"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </button>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div> <!-- /.flexslider -->
+                        <br>
+                    </section>
+                    </tr>
+                </div>
+            </div>
+        </div>
 
-        
-        
-        <div class="container" >
-            <div class="row">
-                <div class="our-listing owl-carousel">
-                    <div class="list-item"th:each="tours:${upcomingTours}">
-                        <div class="list-thumb">
-                            <div class="title">
-                                <h4 th:text="${tours.to}"></h4>
-                            </div>
-                            <img th:src="${tours.imgLink}" alt="destination 1">
-                        </div> <!-- /.list-thumb -->
-                        <div class="list-content">
-<!--                            <h5></h5>-->
-                            <p><span th:text="${tours.arrivalDate}"></span></p>
-                            <p><span th:text="${tours.departureDate}"></span></p>
-                            <a href="#" class="price-btn">Book Now</a>
-                        </div> <!-- /.list-content -->
-                    </div> <!-- /.list-item -->
-                </div> <!-- /.our-listing -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
 
-		<div class="middle-content"></div>
+
 
         <div class="partner-list">
             <div class="container">
@@ -114,6 +114,8 @@ http://www.templatemo.com/tm-409-travel
             </div> <!-- /.container -->
         </div> <!-- /.partner-list -->
 
+
+
         <div id="footer" class="alt" th:include="footer :: title-footer"/>
 
         <script src="/js/vendor/jquery-1.11.0.min.js"></script>
@@ -121,6 +123,28 @@ http://www.templatemo.com/tm-409-travel
         <script src="/js/bootstrap.js"></script>
         <script src="/js/plugins.js"></script>
         <script src="/js/main.js"></script>
-        <!-- templatemo 409 travel -->  
+
+        <!-- Google Map -->
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="/js/vendor/jquery.gmap3.min.js"></script>
+        
+        <!-- Google Map Init-->
+        <script type="text/javascript">
+            jQuery(function($){
+                $('.first-map, .map-holder').gmap3({
+                    marker:{
+                        address: '16.8496189,96.1288854' 
+                    },
+                        map:{
+                        options:{
+                        zoom: 16,
+                        scrollwheel: false,
+                        streetViewControl : true
+                        }
+                    }
+                });
+            });
+        </script>
+        <!-- templatemo 409 travel -->
     </body>
 </html>

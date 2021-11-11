@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,14 +20,18 @@ public class IndexController {
         this.tourService = tourService;
     }
 
-    @GetMapping("/index")
+    @GetMapping(value = {"/index","/"})
     public String getPromotedTours(Model model){
-        List<Tour> listOfPromotedTours = tourService.getAllTours()
-                .stream().filter(tour -> tour.getIsPromoted() == 1)
-                .collect(Collectors.toList());
-        List<Tour> listOfTours = tourService.getAllTours();
-        model.addAttribute("tours",listOfTours);
+        List<Tour> listOfPromotedTours = tourService.getListOfPromotedTours();
+        List<Tour> listOfTours = tourService.getListOfUpcomingTours();
+        model.addAttribute("upcomingTours",listOfTours);
         model.addAttribute("promotedTours", listOfPromotedTours);
         return "index";
     }
+
+
+
+
+
+
 }
