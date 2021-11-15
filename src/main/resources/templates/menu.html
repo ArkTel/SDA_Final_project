@@ -13,11 +13,13 @@
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
                             <li><a th:href="@{/index}" title="">Home</a></li>
-                            <li><a th:href="@{/alltours}" title="">All tours</a></li>
-                            <li><a th:href="@{/addtour}" title="">Add tour</a></li>
+                            <li sec:authorize="isAuthenticated()"><a th:href="@{/alltours}" title="">All tours</a></li>
+                            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
                             <li><a th:href="@{/events}" title="">Events</a></li>
                             <li><a th:href="@{/about}" title="">About us</a></li>
                             <li><a th:href="@{/contact}" title="">Contact</a></li>
+                            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
+                            <li sec:authorize="isAnonymous()"><a th:href="@{/login}" title="">Login</a></li>
                         </ul>
                         <a href="#" class="toggle-menu visible-sm visible-xs">
                             <i class="fa fa-bars"></i>
@@ -31,11 +33,12 @@
                 <div class="menu-responsive">
                     <ul>
                         <li><a th:href="@{/index}" title="">Home</a></li>
-                        <li><a th:href="@{/alltours}" title="">All tours</a></li>
-                        <li><a th:href="@{/addtour}" title="">Add tour</a></li>
+                        <li sec:authorize="isAuthenticated()"><a th:href="@{/alltours}" title="">All tours</a></li>
+                        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
                         <li><a th:href="@{/events}" title="">Events</a></li>
                         <li><a th:href="@{/about}" title="">About us</a></li>
                         <li><a th:href="@{/contact}" title="">Contact</a></li>
+                        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
                     </ul>
                 </div> <!-- /.menu-responsive -->
             </div> <!-- /.col-md-12 -->

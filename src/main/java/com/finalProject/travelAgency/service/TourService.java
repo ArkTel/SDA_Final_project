@@ -37,6 +37,7 @@ public class TourService {
         return getAllTours().stream()
                 .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
                 .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now().plusDays(30)))
+                .limit(10)
                 .collect(Collectors.toList());
     }
 
