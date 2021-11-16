@@ -36,8 +36,7 @@ public class TourController {
 
     @PostMapping("/edittour/{id}")
     public RedirectView postEditTour(@PathVariable("id") Long id, @ModelAttribute Tour updatedTour){
-      tourService.updateTour(id,updatedTour);
-
+        tourService.save(updatedTour);
         return  new RedirectView("/alltours");
     }
 
