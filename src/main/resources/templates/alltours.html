@@ -51,7 +51,7 @@ http://www.templatemo.com/tm-409-travel
                         <div class="col-sm-4 col-lg-12 container mx-auto p-2">
                                 <div class="d-flex">
                                     <div class="col mx-auto text-left text-">Cel podróży:
-                                        <td th:text="${tour.getTo()}"/>
+                                        <td th:text="${tour.to}"/>
                                     </div>
                                     <div class="col mx-auto text-left">Miejsce wylotu:
                                         <td th:text="${tour.getFrom()}"/>
@@ -77,8 +77,11 @@ http://www.templatemo.com/tm-409-travel
                             <a href="#">
                                 <button class="btn-sm">Kup</button>
                             </a>
-                            <a href="#">
-                                <button class="btn-sm">Edytuj</button>
+                            <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>
+                            </a>
+                            <a th:href="@{/copytour/{id}(id=${tour.getId()})}">
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>
                             </a>
 
 

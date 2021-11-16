@@ -30,13 +30,13 @@ public class Tour {
     private String offersType;
     private BigDecimal priceForAdult;
     private BigDecimal priceForChild;
-    private int isPromoted;
+    private boolean isPromoted;
     private int availablePlacesForAdult;
     private int availablePlacesForChildren;
     private String tourDescription;
     private String imgLink;
 
-    public Tour(Long id, String from, String to, LocalDate arrivalDate, LocalDate departureDate, String offersType, BigDecimal priceForAdult, BigDecimal priceForChild, int isPromoted, int availablePlacesForAdult, int availablePlacesForChildren, String tourDescription, String imgLink) {
+    public Tour(Long id, String from, String to, LocalDate arrivalDate, LocalDate departureDate, String offersType, BigDecimal priceForAdult, BigDecimal priceForChild, boolean isPromoted, int availablePlacesForAdult, int availablePlacesForChildren, String tourDescription, String imgLink) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -56,4 +56,11 @@ public class Tour {
 
     }
 
+    public boolean getIsPromoted() {
+        return isPromoted;
+    }
+
+    public void setIsPromoted(boolean isPromoted) {
+        this.isPromoted=isPromoted;
+    }
 }

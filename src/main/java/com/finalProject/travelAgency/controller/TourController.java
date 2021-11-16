@@ -28,17 +28,31 @@ public class TourController {
     }
 
     @GetMapping("/edittour/{id}")
-    public String editTour(@PathVariable("id") Long tourId, Model model){
-        Tour tour = tourService.getTour(tourId);
-        model.addAttribute("tour", tour);
+    public String editTour(@PathVariable("id") Long id, Model model){
+        Tour tour = tourService.getTour(id);
+        model.addAttribute("tour",tour);
         return "edittour";
     }
-//    @GetMapping("/tour")
-//    public String getTour(){
-////        Tour tour = tourService.getTour(tourId);
-////        model.addAttribute("tour", tour);
-//        return "tour";
-//    }
+
+    @PostMapping("/edittour/{id}")
+    public RedirectView postEditTour(@PathVariable("id") Long id, @ModelAttribute Tour updatedTour){
+        tourService.save(updatedTour);
+        return  new RedirectView("/alltours");
+    }
+
+    @GetMapping("/copytour/{id}")
+    public String copyTour(@PathVariable("id") Long id, Model model){
+        Tour tour = tourService.getTour(id);
+        model.addAttribute("tour",tour);
+        return "copytour";
+    }
+
+    @PostMapping("/copytour")
+    public RedirectView postCopyTour(@ModelAttribute Tour newTour){
+        tourService.save(newTour);
+        return new RedirectView("/alltours");
+    }
+
 
     @GetMapping("/addtour")
     public String getAddTour(){

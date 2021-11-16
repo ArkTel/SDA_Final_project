@@ -157,8 +157,8 @@
                         <a href="#">
                             <button class="btn-lg">Zakup</button>
                         </a>
-                        <a href="#">
-                            <button class="btn-lg">Edytuj</button>
+                        <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
+                            <button sec:authorize="hasRole('ADMIN')" class="btn-lg">Edytuj</button>
                         </a>
                     </div>
 

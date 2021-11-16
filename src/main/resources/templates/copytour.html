@@ -38,11 +38,11 @@ http://www.templatemo.com/tm-409-travel
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-sm-6">
-                        <h3 class="widget-title">EDIT TOUR</h3>
+                        <h3 class="widget-title">COPY TOUR</h3>
                         <div th:object="${tour}">
                             <div class="contact-form">
 
-                                <form name="contactform" id="contactform"  th:action="@{/edittour/{id}(id=${tour.getId()})}" method="post">
+                                <form name="contactform" id="contactform"  th:action="@{/copytour}" method="post">
                                     <p>
                                         <input name="from" type="text" id="from" th:value="${tour.from}">
                                     </p>
@@ -97,7 +97,7 @@ http://www.templatemo.com/tm-409-travel
                                         <input name="imgLink" type="text" id="imgLink" th:value="${tour.imgLink}">
                                     </p>
 
-                                    <input type="submit" class="mainBtn" id="submit" value="Zapisz zmiany" >
+                                    <input type="submit" class="mainBtn" id="submit" value="Zapisz" >
                                 </form>
                             </div>
                         </div> <!-- /.contact-form -->
