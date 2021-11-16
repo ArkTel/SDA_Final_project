@@ -80,6 +80,9 @@ http://www.templatemo.com/tm-409-travel
                             <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
                                 <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>
                             </a>
+                            <a th:href="@{/copytour/{id}(id=${tour.getId()})}">
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>
+                            </a>
 
 
                         </div>

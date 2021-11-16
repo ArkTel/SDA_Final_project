@@ -29,7 +29,7 @@ public class TourService {
     public List<Tour> getListOfPromotedTours(){
         return getAllTours().stream()
                 .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
-                .filter(tour -> tour.getIsPromoted() == 1)
+                .filter(tour -> tour.getIsPromoted() == true)
                 .collect(Collectors.toList());
     }
 

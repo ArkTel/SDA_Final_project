@@ -40,6 +40,20 @@ public class TourController {
         return  new RedirectView("/alltours");
     }
 
+    @GetMapping("/copytour/{id}")
+    public String copyTour(@PathVariable("id") Long id, Model model){
+        Tour tour = tourService.getTour(id);
+        model.addAttribute("tour",tour);
+        return "copytour";
+    }
+
+    @PostMapping("/copytour")
+    public RedirectView postCopyTour(@ModelAttribute Tour newTour){
+        tourService.save(newTour);
+        return new RedirectView("/alltours");
+    }
+
+
     @GetMapping("/addtour")
     public String getAddTour(){
         return "addtour";
