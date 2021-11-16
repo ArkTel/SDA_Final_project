@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<
+
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="thymeleaf.org/extras/spring-security"
@@ -42,7 +42,7 @@ http://www.templatemo.com/tm-409-travel
                         <div th:object="${tour}">
                             <div class="contact-form">
 
-                                <form name="contactform" id="contactform"  th:action="@{/alltours}" method="post">
+                                <form name="contactform" id="contactform"  th:action="@{/edittour/{id}(id=${tour.getId()})}" method="post">
                                     <p>
                                         <input name="from" type="text" id="from" th:value="${tour.from}">
                                     </p>
