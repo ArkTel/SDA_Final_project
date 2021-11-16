@@ -43,7 +43,7 @@ http://www.templatemo.com/tm-409-travel
 
                                     <h3 class="title" th:text="${tour.to}"></h3>
                                     <p th:text="${tour.tourDescription}"></p>
-                                    <a href="#" class="slider-btn">Pre-booking</a>
+                                    <a th:href="@{/tour/{id}(id=${tour.getId()})}" class="slider-btn">Details</a>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,8 @@ http://www.templatemo.com/tm-409-travel
 <!--                            <h5></h5>-->
                             <p><span th:text="${tours.arrivalDate}"></span></p>
                             <p><span th:text="${tours.departureDate}"></span></p>
-                            <a href="#" class="price-btn">Book Now</a>
+                            <a th:href="@{/tour/{id}(id=${tours.getId()})}" class="price-btn">Details</a>
+
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
                 </div> <!-- /.our-listing -->

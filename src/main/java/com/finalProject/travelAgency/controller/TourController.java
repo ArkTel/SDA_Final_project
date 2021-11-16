@@ -27,8 +27,8 @@ public class TourController {
         return "tour";
     }
 
-    @GetMapping("/tour/{id}")
-    public String editTour(@PathVariable("tourId") Long tourId, Model model){
+    @GetMapping("/edittour/{id}")
+    public String editTour(@PathVariable("id") Long tourId, Model model){
         Tour tour = tourService.getTour(tourId);
         model.addAttribute("tour", tour);
         return "edittour";
