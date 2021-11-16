@@ -6,7 +6,7 @@
       layout:decorate="~{layouts/layout}">
     <head>
         <meta charset="utf-8">
-        <title>Add tour</title>
+        <title>Edit tour</title>
         <meta name="description" content="">
 <!-- 
 Travel Template
@@ -42,62 +42,62 @@ http://www.templatemo.com/tm-409-travel
                         <div th:object="${tour}">
                             <div class="contact-form">
 
-                                <form name="contactform" id="contactform" action="#" th:action="@{/addtour}" method="post">
+                                <form name="contactform" id="contactform"  th:action="@{/alltours}" method="post">
                                     <p>
-                                        <input name="from" type="text" id="from" ><span th:text="${tour.from}"></span>
+                                        <input name="from" type="text" id="from" th:value="${tour.from}">
                                     </p>
                                     <p>
-                                        <input name="to" type="text" id="to" placeholder="Destination city">
+                                        <input name="to" type="text" id="to" th:value="${tour.to}">
                                     </p>
                                     <p>
-                                        <input name="arrivalDate" type="date" id="arrivalDate" placeholder="Arrival date">
+                                        <input name="arrivalDate" type="date" th:value="${tour.arrivalDate}" id="arrivalDate">
                                     </p>
                                     <p>
-                                        <input name="departureDate" type="date" id="departureDate" placeholder="Departure date">
+                                        <input name="departureDate" type="date" id="departureDate" th:value="${tour.departureDate}">
                                     </p>
                                     <div class="form-group row">
                                         <label for="question" class="col-2 col-form-label">Type of offer</label>
                                     <div class="col-1">
-                                         <label class="radio-inline"><input type="radio" id="question" name="offersType" value="BB">BB</label>
+                                         <label class="radio-inline"><input type="radio" id="question" name="offersType"  th:checked="${tour.offersType}?''">BB</label>
                                     </div>
                                     <div class="col-1">
-                                        <label class="radio-inline"><input type="radio" id="question" name="offersType" value="FB">FB</label>
+                                        <label class="radio-inline"><input type="radio" id="question" name="offersType" th:checked="${tour.offersType}?''">FB</label>
                                     </div>
                                     <div class="col-1">
-                                        <label class="radio-inline"><input type="radio" id="question" name="offersType" value="HB">HB</label>
+                                        <label class="radio-inline"><input type="radio" id="question" name="offersType" th:checked="${tour.offersType}?''">HB</label>
                                     </div>
                                     <div class="col-1">
-                                        <label class="radio-inline"><input type="radio" id="question" name="offersType" value="AI">AI</label>
+                                        <label class="radio-inline"><input type="radio" id="question" name="offersType"  th:checked="${tour.offersType}?''">AI</label>
                                     </div>
 
                                     </div>
                                     <p>
-                                        <input name="priceForAdult" type="text" id="priceForAdult" placeholder="Price for adult">
+                                        <input name="priceForAdult" type="text" id="priceForAdult" th:value="${tour.priceForAdult}">
                                     </p>
                                     <p>
-                                        <input name="priceForChild" type="text" id="priceForChild" placeholder="Price for child">
+                                        <input name="priceForChild" type="text" id="priceForChild" th:value="${tour.priceForChild}">
                                     </p>
 
                                     <div class="form-group row">
                                         <label for="question" class="col-2 col-form-label">Is the tour being promoted</label>
                                         <div class="col-3">
-                                            <label class="radio-inline"><input type="checkbox"  name="isPromoted" value="1">YES</label>
+                                            <label class="radio-inline"><input type="checkbox"  name="isPromoted" th:checked="${tour.isPromoted}">YES</label>
                                         </div>
                                     </div>
                                     <p>
-                                        <input name="availablePlacesForAdult" type="text" id="availablePlacesForAdult" placeholder="Available places for adult">
+                                        <input name="availablePlacesForAdult" type="text" id="availablePlacesForAdult" th:value="${tour.availablePlacesForAdult}">
                                     </p>
                                     <p>
-                                        <input name="availablePlacesForChildren" type="text" id="availablePlacesForChildren" placeholder="Available places for child">
+                                        <input name="availablePlacesForChildren" type="text" id="availablePlacesForChildren" th:value="${tour.availablePlacesForChildren}">
                                     </p>
                                     <p>
-                                        <input name="tourDescription" type="text" id="tourDescription" placeholder="Description of the trip">
+                                        <input name="tourDescription" type="text" id="tourDescription" th:value="${tour.tourDescription}">
                                     </p>
                                     <p>
-                                        <input name="imgLink" type="text" id="imgLink" placeholder="Link to the tour photo">
+                                        <input name="imgLink" type="text" id="imgLink" th:value="${tour.imgLink}">
                                     </p>
 
-                                    <input type="submit" class="mainBtn" id="submit" value="Send Message">
+                                    <input type="submit" class="mainBtn" id="submit" value="Zapisz zmiany" >
                                 </form>
                             </div>
                         </div> <!-- /.contact-form -->
