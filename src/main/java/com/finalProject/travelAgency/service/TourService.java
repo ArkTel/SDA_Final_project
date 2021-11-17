@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,6 +43,13 @@ public class TourService {
     public List<Tour> getListOfPastTours(){
         return getAllTours().stream()
                 .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Tour> getListOfUpcomingToursByDestinationCity(String destinationCity){
+        return tourRepository.findByToContainingIgnoreCase(destinationCity)
+                .stream()
+                .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
                 .collect(Collectors.toList());
     }
 
