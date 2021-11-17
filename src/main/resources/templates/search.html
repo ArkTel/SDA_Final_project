@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="utf-8">
+    <title>Travel Responsive Web Template</title>
+    <meta name="description" content="">
+    <!--
+    Travel Template
+    http://www.templatemo.com/tm-409-travel
+    -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="templatemo">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/templatemo_misc.css">
+    <link rel="stylesheet" href="/css/templatemo_style.css">
+
+    <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body class="text-center">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
+
+<div id="header" class="alt" th:include="menu :: title-menu"/> <!-- /.site-header -->
+
+<div class="page-top" id="templatemo_events">
+</div> <!-- /.page-header -->
+<div class="middle-content">
+    <div class="container">
+        <form class="form-signin" th:action="@{/searchresult}" th:object="${searchform}" method="post">
+
+            <h3 class="widget-title">Znajdź wymarzoną wycieczkę</h3>
+            <p>
+                <label for="destinationCity">Miasto docelowe</label>
+                <p>Gdzie chciałbyś się wybrać</p>
+                <input type="text" id="destinationCity" name="city" th:required="required">
+            </p>
+            <p>
+                <label for="departureDate">Data wyjazdu</label>
+                <p>Zostanie wyszukana data w pobliżu wpisanej daty</p>
+                <input type="date" id="departureDate" name="date" th:required="required">
+            </p>
+            <button type="submit">Szukaj</button>
+        </form>
+    </div>
+</div>
+
+
+<div id="footer" class="alt" th:include="footer :: title-footer"/>
+
+<script src="/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+<!-- templatemo 409 travel -->
+</body>
+</html>
