@@ -2,22 +2,22 @@
     <div class="container">
         <div class="main-header">
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-10">
+                <div class="col-md-3 col-sm-4 col-xs-10">
                     <div class="logo">
                         <a th:href="@{/index}">
                             <img src="/images/logo.png" alt="travel html5 template" title="travel html5 template">
                         </a>
                     </div> <!-- /.logo -->
                 </div> <!-- /.col-md-4 -->
-                <div class="col-md-8 col-sm-6 col-xs-2">
+                <div class="col-md-9 col-sm-8 col-xs-2">
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
                             <li><a th:href="@{/index}" title="">Home</a></li>
                             <li sec:authorize="isAuthenticated()"><a th:href="@{/alltours}" title="">All tours</a></li>
                             <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
-                            <li><a th:href="@{/events}" title="">Events</a></li>
-                            <li><a th:href="@{/about}" title="">About us</a></li>
+                            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/archive}" title="">Archive</a></li>
                             <li><a th:href="@{/contact}" title="">Contact</a></li>
+                            <li><a th:href="@{/search}" title="">Search</a></li>
                             <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
                             <li sec:authorize="isAnonymous()"><a th:href="@{/login}" title="">Login</a></li>
                         </ul>
@@ -33,12 +33,13 @@
                 <div class="menu-responsive">
                     <ul>
                         <li><a th:href="@{/index}" title="">Home</a></li>
-                        <li sec:authorize="isAuthenticated()"><a th:href="@{/alltours}" title="">All tours</a></li>
+                        <li><a th:href="@{/alltours}" title="">All tours</a></li>
                         <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
-                        <li><a th:href="@{/events}" title="">Events</a></li>
-                        <li><a th:href="@{/about}" title="">About us</a></li>
+                        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/archive}" title="">Archive</a></li>
                         <li><a th:href="@{/contact}" title="">Contact</a></li>
+                        <li><a th:href="@{/search}" title="">Search</a></li>
                         <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
+                        <li sec:authorize="isAnonymous()"><a th:href="@{/login}" title="">Login</a></li>
                     </ul>
                 </div> <!-- /.menu-responsive -->
             </div> <!-- /.col-md-12 -->
