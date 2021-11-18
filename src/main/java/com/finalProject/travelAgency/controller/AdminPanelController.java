@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ServicesController {
+public class AdminPanelController {
 
-    @GetMapping("/services")
+    @GetMapping("/paneladmin")
     public String helloWorld(){
-        return "services";
+        return "paneladmin";
     }
 }

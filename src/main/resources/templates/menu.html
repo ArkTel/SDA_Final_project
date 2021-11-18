@@ -12,10 +12,9 @@
                 <div class="col-md-9 col-sm-8 col-xs-2">
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
+                            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/paneladmin}" title="">Admin</a></li>
                             <li><a th:href="@{/index}" title="">Home</a></li>
-                            <li sec:authorize="isAuthenticated()"><a th:href="@{/alltours}" title="">All tours</a></li>
-                            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
-                            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/archive}" title="">Archive</a></li>
+                            <li><a th:href="@{/alltours}" title="">All tours</a></li>
                             <li><a th:href="@{/contact}" title="">Contact</a></li>
                             <li><a th:href="@{/search}" title="">Search</a></li>
                             <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
@@ -31,11 +30,10 @@
         <div class="row">
             <div class="col-md-12 visible-sm visible-xs">
                 <div class="menu-responsive">
-                    <ul>
+                    <ul class="visible-lg visible-md">
+                        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/paneladmin}" title="">Admin</a></li>
                         <li><a th:href="@{/index}" title="">Home</a></li>
                         <li><a th:href="@{/alltours}" title="">All tours</a></li>
-                        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/addtour}" title="">Add tour</a></li>
-                        <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/archive}" title="">Archive</a></li>
                         <li><a th:href="@{/contact}" title="">Contact</a></li>
                         <li><a th:href="@{/search}" title="">Search</a></li>
                         <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>

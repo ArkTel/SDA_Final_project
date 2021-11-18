@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="utf-8">
+    <title>Services - Travel</title>
+    <meta name="description" content="">
+    <!--
+    Travel Template
+    http://www.templatemo.com/tm-409-travel
+    -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="templatemo">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/templatemo_misc.css">
+    <link rel="stylesheet" href="/css/templatemo_style.css">
+
+    <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+<div id="header" class="alt" th:include="menu :: title-menu" />  <!-- /.site-header -->
+
+<div class="page-top" id="templatemo_services">
+</div> <!-- /.page-header -->
+
+<div class="middle-content">
+
+</div> <!-- /.middle-content -->
+
+
+
+<div class="go-act">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="act-btn">
+                    <div class="inner">
+                        <div class="title">
+                            <h2>Add Tour</h2>
+                            <!--                                    <span>Dodaj wycięczkę do bazy</span>-->
+                        </div>
+                    </div> <!-- /.inner -->
+                    <a th:href="@{/addtour}" class="link">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div> <!-- /.act-btn -->
+                <br>
+                <div class="act-btn">
+                    <div class="inner">
+                        <div class="title">
+                            <h2>Archive</h2>
+                            <!--                                    <span>Archiwalne wycieczki</span>-->
+                        </div>
+                    </div> <!-- /.inner -->
+                    <a th:href="@{/archive}" class="link">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div> <!-- /.act-btn -->
+                <br>
+            </div>
+            <div class="col-md-6">
+                <div class="act-btn">
+                    <div class="inner">
+                        <div class="title">
+                            <h2>Edit Tour</h2>
+                            <!--                                    <span>Edytuj wycieczkę dostępną w bazie</span>-->
+                        </div>
+                    </div> <!-- /.inner -->
+                    <a th:href="@{/alltours}" class="link">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div> <!-- /.act-btn -->
+                <!--                    </div> &lt;!&ndash; /.col-md-8 &ndash;&gt;-->
+                <br>
+                <div class="act-btn">
+                    <div class="inner">
+                        <div class="title">
+                            <h2>User List</h2>
+                        </div>
+                    </div> <!-- /.inner -->
+                    <a href="#" class="link">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div> <!-- /.act-btn -->
+            </div> <!-- /.col-md-8 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.go-act -->
+
+
+
+
+
+<div class="partner-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item last">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.partner-list -->
+<div id="footer" class="alt" th:include="footer :: title-footer"/>
+
+<script src="/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/s/bootstrap.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- templatemo 409 travel -->
+</body>
+</html>

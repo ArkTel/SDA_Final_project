@@ -726,7 +726,7 @@ h4.consult-title {
 
 .act-btn .inner .title {
     overflow: hidden;
-    margin-left: 150px;
+    margin-left: 20px;
 
 }
 
@@ -750,7 +750,7 @@ h4.consult-title {
     }
 
     .act-btn .title {
-        display: none;
+        /*display: none;*/
     }
 }
 

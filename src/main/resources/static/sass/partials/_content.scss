@@ -296,7 +296,7 @@ h4.consult-title {
 		}
 		.title {
 			overflow: hidden;
-			margin-left: 150px;
+			margin-left: 20px;
 			h2 {
 				margin-top: 30px;
 				color: $white-color;
@@ -314,7 +314,7 @@ h4.consult-title {
 	@media screen and (min-width: 240px) {
 		margin-top: 30px;
 	 	.title {
-	 		display: none;
+	 		//display: none;
 	 	}
 	}
 	@media screen and (min-width: $tablet) {

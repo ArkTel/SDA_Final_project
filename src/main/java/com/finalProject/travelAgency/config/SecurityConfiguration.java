@@ -36,6 +36,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/addtour").hasAnyRole("ADMIN")
+                .antMatchers("/archive").hasAnyRole("ADMIN")
+                .antMatchers("/edittour").hasAnyRole("ADMIN")
+                .antMatchers("/copytour").hasAnyRole("ADMIN")
+                .antMatchers("/paneladmin").hasAnyRole("ADMIN")
                 .anyRequest().permitAll()
                 .and().csrf().disable()
                 .headers().frameOptions().disable()
