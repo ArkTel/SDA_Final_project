@@ -36,20 +36,24 @@
 </div> <!-- /.page-header -->
 <div class="middle-content">
     <div class="container">
-        <form class="form-signin" th:action="@{/login-proces}" method="post">
-            <p th:if="${param.error}" th:text="Podany login lub hasło są niepoprawne"></p>
+        <h3 class="widget-title">Register</h3>
+        <form name="registerform" id="registerform" th:action="@{/registration}" method="post">
+            <div class="container-fluid col-lg-12">
+                <div class="col-lg-4"> </div>
+                <div class="container-fluid col-lg-4 text-right">
+                    <div>
+                        <label for="username">First Name</label>
+                        <input type="text"  id="username" name="username" th:required="required">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" th:required="required">
+                    </div>
+                </div>
+                <div class="container-fluid col-lg-4"></div>
+            </div>
 
-
-            <h3 class="widget-title">Zaloguj się</h3>
-            <p>
-                <label for="inputLogin">Login</label>
-                <input type="text" id="inputLogin" name="username" th:required="required">
-            </p>
-            <p>
-                <label for="inputPassword">Hasło</label>
-                <input type="password" id="inputPassword" name="password" th:required="required">
-            </p>
-            <button type="submit">Zaloguj</button>
+            <button type="submit">Zarejestruj</button>
         </form>
     </div>
 </div>
