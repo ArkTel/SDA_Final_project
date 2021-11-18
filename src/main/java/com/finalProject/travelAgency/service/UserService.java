@@ -22,7 +22,7 @@ public class UserService {
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        newUser.setRole("USER");
+        newUser.setRole("ROLE_USER");
         userRepository.save(newUser);
    }
 }

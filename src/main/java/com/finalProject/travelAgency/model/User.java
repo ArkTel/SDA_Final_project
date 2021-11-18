@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @Data
-@Entity
+@Entity(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
     public class User implements UserDetails {
@@ -23,6 +23,7 @@ import java.util.Collections;
 
         private String username;
         private String password;
+        @Column(name = "roles")
         private String role;
 
     @Override
