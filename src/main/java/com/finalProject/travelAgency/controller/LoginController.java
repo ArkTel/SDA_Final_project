@@ -14,10 +14,10 @@ public class LoginController {
         return "login";
     }
 
-//    @PostMapping("/login")
-//    public RedirectView userLogin(){
-//        return new RedirectView("/index") ;
-//    }
+    @PostMapping("/login")
+    public RedirectView userLogin(){
+        return new RedirectView("/index") ;
+    }
 
 
 }

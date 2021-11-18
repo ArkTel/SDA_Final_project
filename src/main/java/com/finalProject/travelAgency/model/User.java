@@ -37,7 +37,7 @@ import java.util.Collections;
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
