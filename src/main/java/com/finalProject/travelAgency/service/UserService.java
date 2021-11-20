@@ -6,6 +6,8 @@ import com.finalProject.travelAgency.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -18,11 +20,23 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-   public void save(User user){
+    public void save(User user){
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        newUser.setRole("ROLE_USER");
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setEmail(user.getEmail());
+        newUser.setPhoneNumber(user.getPhoneNumber());
+        if(userRepository.findAll().size()==0){
+            newUser.setRole("ROLE_ADMIN");
+        }else{
+            newUser.setRole("ROLE_USER");
+        }
         userRepository.save(newUser);
-   }
+    }
+
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
+    }
 }

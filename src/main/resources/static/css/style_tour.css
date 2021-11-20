@@ -187,3 +187,6 @@
 .ie-11 .box-icon-classic {
     height: 100%;
 }
+p {
+    margin-bottom: 0 !important;
+}

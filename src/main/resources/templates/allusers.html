@@ -39,46 +39,37 @@ http://www.templatemo.com/tm-409-travel
         <div class="contact-page">
             <div class="container">
                 <div class="d-flex flex-column">
-                        <h3 class="widget-title">ALL TOURS</h3>
+                        <h3 class="widget-title">ALL USERS</h3>
                     <br>
-                    <div th:each="tour:${tours}">
+                    <div th:each="user:${users}">
                     <section class="d-flex flex-column">
                         <article class="box-icon-classic">
                         <div class="col-sm-4 col-lg-12 container mx-auto p-2">
                                 <div class="d-flex">
-                                    <div class="col mx-auto text-left text-">Cel podróży:
-                                        <td th:text="${tour.to}"/>
+                                    <div class="col mx-auto text-left text-">Klient
+                                        <p>Imię: <span th:text="${user.firstName}"></span></p>
+                                        <p>Nazwisko: <span th:text="${user.lastName}"></span></p>
                                     </div>
-                                    <div class="col mx-auto text-left">Miejsce wylotu:
-                                        <td th:text="${tour.getFrom()}"/>
+                                    <div class="col mx-auto text-left">Kontakt
+                                        <p>Email: <span th:text="${user.email}"></span></p>
+                                        <p>Nr. tel: <span th:text="${user.phoneNumber}"></span></p>
                                     </div>
-                                    <div class="col">
-                                        <div class="d-flex mx-auto flex-column ">
-                                            <div class="col mx-auto text-left">Koszt:
-                                                <div class="col mx-auto text-left">osoba dorosła  <td th:text="${tour.getPriceForAdult()}"/>
-                                                    </div>
-                                                         <div class="col mx-auto text-left">dziecko  <td th:text="${tour.getPriceForChild()}"/>
-                                                    </div>
-                                                <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 </div>
                             <td>
-                            <a th:href="@{/tour/{id}(id=${tour.getId()})}">
-                                <button class="btn-sm ">Sprawdż Szczegóły</button>
+                            <a href="#">
+                                <button class="btn-sm ">Edytuj</button>
                             </a>
                             </td>
                             <a href="#">
-                                <button class="btn-sm">Kup</button>
+                                <button class="btn-sm">Zakupione wycieczki</button>
                             </a>
-                            <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>
-                            </a>
-                            <a th:href="@{/copytour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>
-                            </a>
+<!--                            <a th:href="@{/edittour/{id}(id=${tour.getId()})}">-->
+<!--                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>-->
+<!--                            </a>-->
+<!--                            <a th:href="@{/copytour/{id}(id=${tour.getId()})}">-->
+<!--                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>-->
+<!--                            </a>-->
 
 
                         </div>
