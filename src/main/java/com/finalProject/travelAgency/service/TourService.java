@@ -17,42 +17,49 @@ public class TourService {
         this.tourRepository = tourRepository;
     }
 
-    public Tour save(Tour entity){
+    public Tour save(Tour entity) {
         return tourRepository.save(entity);
     }
-    public Tour getTour(Long id){
+
+    public Tour getTour(Long id) {
         return tourRepository.getById(id);
     }
-    public List<Tour> getAllTours () {return tourRepository.findAll();}
 
-    public List<Tour> getListOfPromotedTours(){
+    public List<Tour> getAllTours() {
+        return tourRepository.findAll();
+    }
+
+    public List<Tour> getAllUpcomingTours() {
         return getAllTours().stream()
                 .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Tour> getListOfPromotedTours() {
+        return getAllUpcomingTours().stream()
                 .filter(tour -> tour.getIsPromoted() == true)
                 .collect(Collectors.toList());
     }
 
-    public List<Tour> getListOfUpcomingTours(){
-        return getAllTours().stream()
-                .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
+    public List<Tour> getListOfUpcomingTours() {
+        return getAllUpcomingTours().stream()
                 .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now().plusDays(30)))
                 .limit(10)
                 .collect(Collectors.toList());
     }
 
-    public List<Tour> getListOfPastTours(){
+    public List<Tour> getListOfPastTours() {
         return getAllTours().stream()
                 .filter(tour -> tour.getArrivalDate().isBefore(LocalDate.now()))
                 .collect(Collectors.toList());
     }
 
-    public List<Tour> getListOfUpcomingToursByDestinationCity(String destinationCity){
+    public List<Tour> getListOfUpcomingToursByDestinationCity(String destinationCity) {
         return tourRepository.findByToContainingIgnoreCase(destinationCity)
                 .stream()
                 .filter(tour -> tour.getArrivalDate().isAfter(LocalDate.now()))
                 .collect(Collectors.toList());
     }
-
 
 
 }

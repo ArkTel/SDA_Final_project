@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AdminPanelController {
 
     @GetMapping("/paneladmin")
-    public String helloWorld(){
+    public String getPanelAdmin(){
         return "paneladmin";
     }
 }
