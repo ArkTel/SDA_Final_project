@@ -43,4 +43,7 @@ public class UserService {
     public User getUser(Long id) {
         return userRepository.getById(id);
     }
+    public User getUser(String name){
+        return userRepository.findByUsername(name).get();
+    }
 }
