@@ -12,8 +12,5 @@ import java.util.List;
 @Repository
 public interface SearchRepository extends JpaRepository<Tour,Long> {
 
-    @Query(value = "select * from Tour t where t.value_To = :destination and :searchDate >= t.arrival_Date and :searchDate < t.departure_Date", nativeQuery = true)
-    List<Tour> searchTour(@Param("destination") String to, @Param("searchDate") LocalDate date);
-
     List<Tour> findByToContainingIgnoreCaseAndArrivalDateBeforeAndDepartureDateAfter(String to, LocalDate date, LocalDate date2);
 }
