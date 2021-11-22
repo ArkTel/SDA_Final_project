@@ -35,41 +35,41 @@
 <div class="page-top" id="templatemo_events">
 </div> <!-- /.page-header -->
 <div class="middle-content">
-    <div class="container">
+    <div class="container" th:object="${user}">
         <h3 class="widget-title">Register</h3>
-        <form name="registerform" id="registerform" th:action="@{/registration}" method="post">
+        <form name="contactform" id="contactform"  th:action="@{/edituser/{id}(id=${user.getId()})}" method="post">
             <div class="container-fluid col-lg-12">
                 <div class="col-lg-4"> </div>
                 <div class="container-fluid col-lg-4 text-right">
                     <div>
                         <label for="username">Login</label>
-                        <input type="text"  id="username" name="username" th:required="required">
+                        <input type="text"  id="username" name="username" th:value="${user.username}">
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" th:required="required">
+                        <input type="password" id="password" name="password" th:value="${user.password}">
                     </div>
                     <div>
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" th:required="required">
+                        <input type="email" id="email" name="email" th:value="${user.email}">
                     </div>
                     <div>
                         <label for="firstName">First name</label>
-                        <input type="text" id="firstName" name="firstName" th:required="required">
+                        <input type="text" id="firstName" name="firstName" th:value="${user.firstName}">
                     </div>
                     <div>
                         <label for="lastName">Last name</label>
-                        <input type="text" id="lastName" name="lastName" th:required="required">
+                        <input type="text" id="lastName" name="lastName"  th:value="${user.lastName}">
                     </div>
                     <div>
                         <label for="phoneNumber">Phone number</label>
-                        <input type="number" id="phoneNumber" name="phoneNumber" th:required="required" minlength="9" maxlength="9">
+                        <input type="number" id="phoneNumber" name="phoneNumber"  minlength="9" maxlength="9" th:value="${user.phoneNumber}">
                     </div>
                 </div>
                 <div class="container-fluid col-lg-4"></div>
             </div>
 
-            <button type="submit">Zarejestruj</button>
+            <button type="submit">Zapisz zmiany</button>
         </form>
     </div>
 </div>

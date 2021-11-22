@@ -20,7 +20,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void save(User user){
+    public void save(User user) {
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -28,15 +28,19 @@ public class UserService {
         newUser.setLastName(user.getLastName());
         newUser.setEmail(user.getEmail());
         newUser.setPhoneNumber(user.getPhoneNumber());
-        if(userRepository.findAll().size()==0){
+        if (userRepository.findAll().isEmpty()) {
             newUser.setRole("ROLE_ADMIN");
-        }else{
+        } else {
             newUser.setRole("ROLE_USER");
         }
         userRepository.save(newUser);
     }
 
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User getUser(Long id) {
+        return userRepository.getById(id);
     }
 }
