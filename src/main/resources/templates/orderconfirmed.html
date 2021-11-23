@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="utf-8">
+    <title>ORDER TOUR</title>
+    <meta name="description" content="">
+    <!--
+    Travel Template
+    http://www.templatemo.com/tm-409-travel
+    -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="templatemo">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/templatemo_misc.css">
+    <link rel="stylesheet" href="/css/templatemo_style.css">
+
+    <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
+
+<div id="header" class="alt" th:include="menu :: title-menu"/>  <!-- /.site-header -->
+
+<div class="page-top" id="templatemo_contact">
+</div> <!-- /.page-header -->
+
+<div class="contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-6">
+
+                <div class="sample-thumb">
+
+                </div>
+                <div>
+                    <h3 class="widget-title">Dziękujem za skorzystanie z naszych usług!</h3>
+                    <a th:href="@{/index}">
+                        <button class="btn-sm ">Strona główna</button>
+                    </a>
+                    <a th:href="@{/logout}">
+                        <button class="btn-sm ">Wyloguj</button>
+                    </a>
+                </div> <!-- /.contact-form -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="partner-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item last">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.partner-list -->
+
+
+<div id="footer" class="alt" th:include="footer :: title-footer"/>
+
+<script src="/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- templatemo 409 travel -->
+</body>
+</html>

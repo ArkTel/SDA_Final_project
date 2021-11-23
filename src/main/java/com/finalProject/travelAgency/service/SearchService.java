@@ -15,9 +15,6 @@ public class SearchService {
         this.searchRepository = searchRepository;
     }
 
-    public List<Tour> searchTour(String to, LocalDate date){
-       return searchRepository.searchTour(to, date);
-    }
 
     public List<Tour> findTour(String to, LocalDate date, LocalDate date2){
         return searchRepository.findByToContainingIgnoreCaseAndArrivalDateBeforeAndDepartureDateAfter(to, date, date2);

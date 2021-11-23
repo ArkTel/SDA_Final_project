@@ -164,7 +164,7 @@
                     </div>
 
                     <div>
-                        <a href="#">
+                        <a th:href="@{/order/{id}(id=${tour.getId()})}">
                             <button class="btn-lg">Zakup</button>
                         </a>
                         <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
