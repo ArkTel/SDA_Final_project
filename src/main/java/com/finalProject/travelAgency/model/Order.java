@@ -1,32 +1,42 @@
 package com.finalProject.travelAgency.model;
 
-import javax.persistence.*;
+import lombok.*;
+import org.hibernate.Hibernate;
 
-@Entity(name = "tour_orders")
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.Objects;
+
+@Entity(name = "orders")
+@Getter
+@Setter
+@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
-    private User userId;
+    private User user;
     @ManyToOne
-    @JoinColumn(name = "id",insertable = false, updatable = false)
-    private Tour tourId;
+    private Tour tour;
     private int orderPlacesForAdults;
     private int orderPlacesForChildren;
-    private int totalPrice;
+    private BigDecimal totalPrice;
 
-    public Order(Long id, User userId, Tour tourId, int orderPlacesForAdults, int orderPlacesForChildren, int totalPrice) {
-        this.id = id;
-        this.userId = userId;
-        this.tourId = tourId;
-        this.orderPlacesForAdults = orderPlacesForAdults;
-        this.orderPlacesForChildren = orderPlacesForChildren;
-        this.totalPrice = totalPrice;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Order order = (Order) o;
+        return Objects.equals(id, order.id);
     }
 
-    public Order() {
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }

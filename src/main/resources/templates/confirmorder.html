@@ -40,23 +40,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-6">
-                <h3 class="widget-title">ORDER</h3>
+                <h3 class="widget-title">CONFIRM ORDER</h3>
                 <div class="sample-thumb" >
 
                 </div>
                 <div>
-                    <div class="contact-form" th:object="${order}" >
-
-                        <form name="contactform" id="contactform" th:action="@{/orderconfirmed/{id}(id=${order.getTourId()})}"
-                               method="post">
+                    <div class="contact-form">
                             <h3>Podsumowanie</h3>
-
                             <p>
-                                Kwota do zapłaty za rezerwację: <strong><span th:text="${sum}"></span></strong>
-
+                                Kwota do zapłaty za rezerwację: <strong><span th:text="${sum}"></span></strong><br>
+                                Zarezerwowane miejsca dla osób dorosłych: <strong><span th:text="${order.orderPlacesForAdults}"></span></strong><br>
+                                Zarezerwowane miejsca dla dzieci: <strong><span th:text="${order.orderPlacesForChildren}"></span></strong><br>
                             </p>
-                            <input type="submit" class="mainBtn" id="submit" value="Rezerwuj">
-                        </form>
+                        <a th:href="@{/orderconfirmed}">
+                            <button class="btn-sm ">Rezerwuj</button>
+                        </a>
                     </div>
                 </div> <!-- /.contact-form -->
             </div>

@@ -48,7 +48,7 @@
                     <div class="contact-form">
 
                         <form name="contactform" id="contactform" th:action="@{/confirmorder/{id}(id=${tour.getId()})}"
-                              th:object="${orderform}" method="post">
+                              th:object="${order}" method="post">
                             <p>
                                 Zamów wycieczkę: <strong><span th:text="${tour.from}"></span></strong> -> <strong><span
                                     th:text="${tour.to}"></span> </strong>w dniach od <strong><span
