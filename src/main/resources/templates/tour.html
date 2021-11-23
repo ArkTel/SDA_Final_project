@@ -52,14 +52,8 @@
                     <div class="sample-thumb">
                         <img th:src="${tour.imgLink}" alt="about us" title="about us">
                     </div> <!-- /.sample-thumb -->
-                        <div class="col-sm-4 col-lg-4">
-                            <h5>Temperatura</h5>
-                            <span th:text="${weather.getTemperature().getMetric().getValue()}"></span>
-                        </div>
-                    <div class="col-sm-4 col-lg-4">
-                        <h5>Ciśnienie</h5>
-                        <span th:text="${weather.getPressure().getMetric().getValue()}"></span>
-                    </div>
+
+
                     <p th:text="${tour.tourDescription}"></p>
                 </div>
 
@@ -171,8 +165,48 @@
                             <button sec:authorize="hasRole('ADMIN')" class="btn-lg">Edytuj</button>
                         </a>
                     </div>
+                <br>
 
+                <h5>Obecna pogoda w miejscu docelowym</h5>
+
+                <div class="col-sm-4 col-lg-4">
+                    <article class="box-icon-classic">
+                        <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                            <div class="unit-body">
+                                <h5 class="box-icon-classic-title"><strong>Temperatura</strong></h5>
+                                <p class="box-icon-classic-text" th:text="${weather.getTemperature().getMetric().getValue()}+' °C'">
+
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+
+                <div class="col-sm-4 col-lg-4">
+                    <article class="box-icon-classic">
+                        <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                            <div class="unit-body">
+                                <h5 class="box-icon-classic-title"><strong>Ciśnienie</strong></h5>
+                                <p class="box-icon-classic-text" th:text="${weather.getPressure().getMetric().getValue()}+' mb'">
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-sm-4 col-lg-4">
+                    <article class="box-icon-classic">
+                        <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                            <div class="unit-body">
+                                <h5 class="box-icon-classic-title"><strong>Wilgotność</strong></h5>
+                                <p class="box-icon-classic-text" th:text="${weather.getRelativeHumidity()}+' %'"></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
                 <!-- /.widget-item -->
             </div>
 

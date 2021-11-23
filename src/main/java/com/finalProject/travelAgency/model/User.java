@@ -16,8 +16,6 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity(name = "users")
-@NoArgsConstructor
-@AllArgsConstructor
     public class User implements UserDetails {
 
         @Id
