@@ -13,11 +13,11 @@ public class LoginController {
     public String login() {
         return "login";
     }
-
-    @PostMapping("/login")
-    public RedirectView userLogin(){
-        return new RedirectView("/index") ;
-    }
+//
+//    @PostMapping("/login")
+//    public RedirectView userLogin(){
+//        return new RedirectView("/index") ;
+//    }
 
 
 }
