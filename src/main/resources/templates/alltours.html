@@ -70,7 +70,7 @@ http://www.templatemo.com/tm-409-travel
                                 <button class="btn-sm ">Sprawdż Szczegóły</button>
                             </a>
                             </td>
-                            <a href="#">
+                            <a th:href="@{/order/{id}(id=${tour.getId()})}">
                                 <button class="btn-sm">Kup</button>
                             </a>
                             <a th:href="@{/edittour/{id}(id=${tour.getId()})}">

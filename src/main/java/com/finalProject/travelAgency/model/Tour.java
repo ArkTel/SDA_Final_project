@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+import java.util.List;
 
 
 @Data
@@ -35,6 +35,9 @@ public class Tour {
     private int availablePlacesForChildren;
     private String tourDescription;
     private String imgLink;
+
+    @OneToMany
+    private List<Order> orders;
 
     public Tour(Long id, String from, String to, LocalDate arrivalDate, LocalDate departureDate, String offersType, BigDecimal priceForAdult, BigDecimal priceForChild, boolean isPromoted, int availablePlacesForAdult, int availablePlacesForChildren, String tourDescription, String imgLink) {
         this.id = id;

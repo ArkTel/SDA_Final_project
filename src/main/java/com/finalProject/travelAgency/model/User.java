@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,6 +31,9 @@ import java.util.Objects;
         private String phoneNumber;
         @Column(name = "roles")
         private String role;
+
+        @OneToMany
+        private List<Order> orders;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
