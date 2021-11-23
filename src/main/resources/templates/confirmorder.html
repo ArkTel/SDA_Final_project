@@ -45,14 +45,16 @@
 
                 </div>
                 <div>
-                    <div class="contact-form" th:object="${order}" >
+                    <div class="contact-form">
 
-                        <form name="contactform" id="contactform" th:action="@{/orderconfirmed/{id}(id=${order.getTourId()})}"
-                               method="post">
+                        <form name="contactform" id="contactform" th:action="@{/orderconfirmed}"
+                              th:object="${order}" method="post">
                             <h3>Podsumowanie</h3>
 
                             <p>
-                                Kwota do zapłaty za rezerwację: <strong><span th:text="${sum}"></span></strong>
+                                Kwota do zapłaty za rezerwację: <strong><span th:text="${sum}"></span></strong><br>
+                                tour id: <strong><span th:text="${order.tourId}"></span></strong><br>
+                                miejsca dorosłych: <strong><span th:text="${order.orderPlacesForAdults}"></span></strong>
 
                             </p>
                             <input type="submit" class="mainBtn" id="submit" value="Rezerwuj">

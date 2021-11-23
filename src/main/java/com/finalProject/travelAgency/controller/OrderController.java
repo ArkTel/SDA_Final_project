@@ -50,15 +50,22 @@ public class OrderController {
         return "confirmorder";
     }
 //    @GetMapping("/confirmorder")
-//    public String getConfirmOrder(){
+//    public String getConfirmOrder(OrderForm oderform){
 ////        userService.getUser(principal.getName()).getId();
 //
 //        return "confirmorder";
 //    }
 
-    @PostMapping("/orderconfirmed/{id}")
-    public String postOrderConfirmed(@PathVariable("id") Long id, Principal principal){
-//        orderService.save(new Order(userService.getUser(principal.getName()),id,))
+    @PostMapping("/orderconfirmed")
+    public String postOrderConfirmed(@ModelAttribute(name = "order") OrderForm order, Principal principal){
+        Order newOrder = Order.builder()
+                .userId(userService.getUser(principal.getName()))
+                .orderPlacesForAdults(order.getOrderPlacesForAdults())
+                .orderPlacesForChildren(order.getOrderPlacesForChildren())
+                .tourId(tourService.getTour(order.getTourId()))
+                .totalPrice(order.getSum())
+                .build();
+        orderService.save(newOrder);
         return "orderconfirmed";
     }
 }

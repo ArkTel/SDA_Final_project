@@ -22,8 +22,9 @@ public class TourService {
     }
 
     public Tour getTour(Long id) {
-        return tourRepository.getById(id);
+        return tourRepository.findById(id).get();
     }
+
 
     public List<Tour> getAllTours() {
         return tourRepository.findAll();
