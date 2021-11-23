@@ -7,22 +7,22 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Entity(name = "tour_orders")
+@Entity(name = "orders")
 @Getter
 @Setter
 @ToString
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
-    private User userId;
+    private User user;
     @ManyToOne
-    @JoinColumn(name = "id",insertable = false, updatable = false)
-    private Tour tourId;
+    private Tour tour;
     private int orderPlacesForAdults;
     private int orderPlacesForChildren;
     private BigDecimal totalPrice;
