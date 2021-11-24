@@ -59,7 +59,6 @@ public class TourController {
         return new RedirectView("/alltours");
     }
 
-
     @GetMapping("/addtour")
     public String getAddTour(){
         return "addtour";
@@ -85,6 +84,5 @@ public class TourController {
         model.addAttribute("tours",listOfTours);
         return "archive";
     }
-
 
 }

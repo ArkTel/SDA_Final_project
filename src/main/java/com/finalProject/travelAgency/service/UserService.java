@@ -43,7 +43,23 @@ public class UserService {
     public User getUser(Long id) {
         return userRepository.getById(id);
     }
-    public User getUser(String name){
+
+    public User getUser(String name) {
         return userRepository.findByUsername(name).get();
     }
+
+    public void editUser(Long id, User user) {
+        User newUser = new User();
+        newUser.setId(id);
+        newUser.setUsername(user.getUsername());
+        newUser.setPassword(user.getPassword());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setEmail(user.getEmail());
+        newUser.setPhoneNumber(user.getPhoneNumber());
+        newUser.setRole("ROLE_USER");
+        userRepository.save(newUser);
+
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.finalProject.travelAgency.service;
 
 import com.finalProject.travelAgency.model.Order;
+import com.finalProject.travelAgency.model.User;
 import com.finalProject.travelAgency.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,12 @@ public class OrderService {
         return orderRepository.save(entity);
     }
 
+    public List<Order> getOrdersByUserId(User user){
+        return orderRepository.findByUser(user);
+    }
+  
     public List<Order> getAllOrders(){
         return orderRepository.findAll();
     }
-
 
 }

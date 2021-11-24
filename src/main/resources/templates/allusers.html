@@ -6,7 +6,7 @@
       layout:decorate="~{layouts/layout}">
     <head>
         <meta charset="utf-8">
-        <title>Contact - Travel</title>
+        <title>All users</title>
         <meta name="description" content="">
 <!--
 Travel Template
@@ -46,31 +46,24 @@ http://www.templatemo.com/tm-409-travel
                         <article class="box-icon-classic">
                         <div class="col-sm-4 col-lg-12 container mx-auto p-2">
                                 <div class="d-flex">
-                                    <div class="col mx-auto text-left text-">Klient
-                                        <p>Imię: <span th:text="${user.firstName}"></span></p>
-                                        <p>Nazwisko: <span th:text="${user.lastName}"></span></p>
+                                    <div class="col mx-auto text-left text-">Client
+                                        <p>First name: <span th:text="${user.firstName}"></span></p>
+                                        <p>Last name: <span th:text="${user.lastName}"></span></p>
                                     </div>
-                                    <div class="col mx-auto text-left">Kontakt
+                                    <div class="col mx-auto text-left">Contact:
                                         <p>Email: <span th:text="${user.email}"></span></p>
-                                        <p>Nr. tel: <span th:text="${user.phoneNumber}"></span></p>
+                                        <p>Phone number: <span th:text="${user.phoneNumber}"></span></p>
                                     </div>
 
                                 </div>
                             <td>
                             <a th:href="@{/edituser/{id}(id=${user.getId()})}">
-                                <button class="btn-sm ">Edytuj</button>
+                                <button class="btn-sm ">Edit</button>
                             </a>
                             </td>
-                            <a href="#">
-                                <button class="btn-sm">Zakupione wycieczki</button>
+                            <a th:href="@{/purchasedtours/{id}(id=${user.getId()})}">
+                                <button class="btn-sm">Ordered tours</button>
                             </a>
-<!--                            <a th:href="@{/edittour/{id}(id=${tour.getId()})}">-->
-<!--                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>-->
-<!--                            </a>-->
-<!--                            <a th:href="@{/copytour/{id}(id=${tour.getId()})}">-->
-<!--                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>-->
-<!--                            </a>-->
-
 
                         </div>
                         </article>
@@ -130,28 +123,6 @@ http://www.templatemo.com/tm-409-travel
         <script src="/js/bootstrap.js"></script>
         <script src="/js/plugins.js"></script>
         <script src="/js/main.js"></script>
-
-        <!-- Google Map -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="/js/vendor/jquery.gmap3.min.js"></script>
-
-        <!-- Google Map Init-->
-        <script type="text/javascript">
-            jQuery(function($){
-                $('.first-map, .map-holder').gmap3({
-                    marker:{
-                        address: '16.8496189,96.1288854'
-                    },
-                        map:{
-                        options:{
-                        zoom: 16,
-                        scrollwheel: false,
-                        streetViewControl : true
-                        }
-                    }
-                });
-            });
-        </script>
         <!-- templatemo 409 travel -->
     </body>
 </html>
