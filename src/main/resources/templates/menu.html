@@ -13,6 +13,7 @@
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
                             <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/paneladmin}" title="">Admin</a></li>
+                            <li sec:authorize="hasRole('USER')"><a th:href="@{/paneluser}" title="">User panel</a></li>
                             <li><a th:href="@{/index}" title="">Home</a></li>
                             <li><a th:href="@{/alltours}" title="">All tours</a></li>
                             <li><a th:href="@{/contact}" title="">Contact</a></li>
@@ -32,6 +33,7 @@
                 <div class="menu-responsive">
                     <ul class="visible-lg visible-md">
                         <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/paneladmin}" title="">Admin</a></li>
+                        <li sec:authorize="hasRole('USER')"><a th:href="@{/paneluser}" title="">User panel</a></li>
                         <li><a th:href="@{/index}" title="">Home</a></li>
                         <li><a th:href="@{/alltours}" title="">All tours</a></li>
                         <li><a th:href="@{/contact}" title="">Contact</a></li>

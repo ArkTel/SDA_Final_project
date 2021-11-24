@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Entity(name = "users")
 @AllArgsConstructor
 
@@ -36,6 +36,10 @@ import java.util.List;
 
         @OneToMany
         private List<Order> orders;
+
+    public User() {
+
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

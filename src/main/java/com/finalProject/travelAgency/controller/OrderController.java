@@ -36,7 +36,8 @@ public class OrderController {
 
     @PostMapping("/confirmorder/{id}")
     public String postConfirmOrder(@ModelAttribute Order order, @PathVariable("id") Long id, Model model, Principal principal) {
-        order.setTour(tourService.getTour(id));
+        Tour tour = tourService.getTour(id);
+        order.setTour(tour);
         order.setUser(userService.getUser(principal.getName()));
         BigDecimal sum = (tourService.getTour(order.getTour().getId()).getPriceForAdult().multiply(new BigDecimal(order.getOrderPlacesForAdults())))
                 .add(tourService.getTour(order.getTour().getId()).getPriceForChild().multiply(new BigDecimal(order.getOrderPlacesForChildren())));
@@ -44,6 +45,9 @@ public class OrderController {
         model.addAttribute("order", order);
         model.addAttribute("sum", sum);
         orderService.save(order);
+        tour.setAvailablePlacesForAdult(tourService.getTour(id).getAvailablePlacesForAdult() - order.getOrderPlacesForAdults());
+        tour.setAvailablePlacesForChildren(tourService.getTour(id).getAvailablePlacesForChildren() - order.getOrderPlacesForChildren());
+        tourService.save(tour);
         return "confirmorder";
     }
 
