@@ -50,26 +50,26 @@
                         <form name="contactform" id="contactform" th:action="@{/confirmorder/{id}(id=${tour.getId()})}"
                               th:object="${order}" method="post">
                             <p>
-                                Zamów wycieczkę: <strong><span th:text="${tour.from}"></span></strong> -> <strong><span
-                                    th:text="${tour.to}"></span> </strong>w dniach od <strong><span
-                                    th:text="${tour.arrivalDate}"></span></strong> do <strong><span
+                                Order a tour: <strong><span th:text="${tour.from}"></span></strong> -> <strong><span
+                                    th:text="${tour.to}"></span> </strong>in days from <strong><span
+                                    th:text="${tour.arrivalDate}"></span></strong> to <strong><span
                                     th:text="${tour.departureDate}"></span></strong>.
                             </p>
                             <div>
-                                <label for="orderPlacesForAdults" >Ile miejsc dla osób dorosłych chcesz zarezerwować?</label>
-                                <p>Aktualna liczba dostępnych miejsc to: <strong><span th:text="${tour.availablePlacesForAdult}"></span></strong> </p>
-                                <p>Cena za jedno miejsce: <strong><span th:text="${tour.priceForAdult}"></span></strong> </p>
+                                <label for="orderPlacesForAdults" >How many places for adults do you want to reserve?</label>
+                                <p>The current number of places available is: <strong><span th:text="${tour.availablePlacesForAdult}"></span></strong> </p>
+                                <p>Price for one seat: <strong><span th:text="${tour.priceForAdult}"></span></strong> </p>
                                 <input name="orderPlacesForAdults" type="number" id="orderPlacesForAdults" min="0" th:max="${tour.availablePlacesForAdult}">
 
                             </div>
                             <div>
-                                <label for="orderPlacesForChildren" >Ile miejsc dla dzieci chcesz zarezerwować?</label>
-                                <p>Aktualna liczba dostępnych miejsc to: <strong><span th:text="${tour.availablePlacesForChildren}"></span> </strong></p>
-                                <p>Cena za jedno miejsce: <strong><span th:text="${tour.priceForChild}"></span></strong></p>
+                                <label for="orderPlacesForChildren" >How many places for children do you want to reserve?</label>
+                                <p>The current number of places available is: <strong><span th:text="${tour.availablePlacesForChildren}"></span> </strong></p>
+                                <p>Price for one seat: <strong><span th:text="${tour.priceForChild}"></span></strong></p>
                                     <input name="orderPlacesForChildren" type="number" id="orderPlacesForChildren" min="0" th:max="${tour.availablePlacesForChildren}">
 
                             </div>
-                            <input type="submit" class="mainBtn" id="submit" value="Rezerwuj">
+                            <input type="submit" class="mainBtn" id="submit" value="Book it">
                         </form>
                     </div>
                 </div> <!-- /.contact-form -->
@@ -77,7 +77,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="partner-list">
     <div class="container">
@@ -115,7 +114,6 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div> <!-- /.partner-list -->
-
 
 <div id="footer" class="alt" th:include="footer :: title-footer"/>
 

@@ -38,22 +38,21 @@
     <div class="container">
         <form class="form-signin" th:action="@{/searchresult}" th:object="${searchform}" method="post">
 
-            <h3 class="widget-title">Znajdź wymarzoną wycieczkę</h3>
+            <h3 class="widget-title">Find your dream tour</h3>
             <p>
-                <label for="destinationCity">Miasto docelowe</label>
-                <p>Gdzie chciałbyś się wybrać</p>
+                <label for="destinationCity">Destination</label>
+                <p>Where would you like to go</p>
                 <input type="text" id="destinationCity" name="city" th:required="required">
             </p>
             <p>
-                <label for="departureDate">Data wyjazdu</label>
-                <p>Zostanie wyszukana data w pobliżu wpisanej daty</p>
+                <label for="departureDate">Date of departure</label>
+                <p>The date near the entered date will be searched</p>
                 <input type="date" id="departureDate" name="date" th:required="required">
             </p>
-            <button type="submit">Szukaj</button>
+            <button type="submit">Search</button>
         </form>
     </div>
 </div>
-
 
 <div id="footer" class="alt" th:include="footer :: title-footer"/>
 
