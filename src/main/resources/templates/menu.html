@@ -16,7 +16,7 @@
                             <li sec:authorize="hasRole('USER')"><a th:href="@{/paneluser}" title="">User panel</a></li>
                             <li><a th:href="@{/index}" title="">Home</a></li>
                             <li><a th:href="@{/alltours}" title="">All tours</a></li>
-<!--                            <li><a th:href="@{/contact}" title="">Contact</a></li> to do-->
+                            <li><a th:href="@{/contact}" title="">Contact</a></li> to do
                             <li><a th:href="@{/search}" title="">Search</a></li>
                             <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" title="">Logout</a></li>
                             <li sec:authorize="isAnonymous()"><a th:href="@{/login}" title="">Login</a></li>

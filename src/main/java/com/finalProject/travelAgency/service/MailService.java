@@ -37,4 +37,20 @@ public class MailService {
                 +" w terminie "+tourService.getTour(order.getId()).getArrivalDate()+" - "+tourService.getTour(order.getId()).getDepartureDate()+". Koszt zakupionej wycieczki to: "+ order.getTotalPrice());
         mailSender.send(mailMessage);
     }
+
+    public void sendAsk(String message, String email, String subject){
+
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost(this.emailConfiguration.getHost());
+        mailSender.setPort(this.emailConfiguration.getPort());
+        mailSender.setUsername(this.emailConfiguration.getUsername());
+        mailSender.setPassword(this.emailConfiguration.getPassword());
+
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setFrom(email);
+        mailMessage.setTo("travel@gmail.com");
+        mailMessage.setSubject(subject);
+        mailMessage.setText(message);
+        mailSender.send(mailMessage);
+    }
 }
