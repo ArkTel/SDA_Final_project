@@ -35,7 +35,7 @@ public class Tour {
     private int availablePlacesForChildren;
     private String tourDescription;
     private String imgLink;
-
+    @JsonIgnore
     @OneToMany
     private List<Order> orders;
 
