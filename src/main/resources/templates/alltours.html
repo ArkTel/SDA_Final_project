@@ -6,7 +6,7 @@
       layout:decorate="~{layouts/layout}">
     <head>
         <meta charset="utf-8">
-        <title>Contact - Travel</title>
+        <title>All tours</title>
         <meta name="description" content="">
 <!--
 Travel Template
@@ -46,18 +46,18 @@ http://www.templatemo.com/tm-409-travel
                         <article class="box-icon-classic">
                         <div class="col-sm-4 col-lg-12 container mx-auto p-2">
                                 <div class="d-flex">
-                                    <div class="col mx-auto text-left text-">Cel podróży:
+                                    <div class="col mx-auto text-left text-">Destination:
                                         <td th:text="${tour.to}"/>
                                     </div>
-                                    <div class="col mx-auto text-left">Miejsce wylotu:
+                                    <div class="col mx-auto text-left">Departure:
                                         <td th:text="${tour.getFrom()}"/>
                                     </div>
                                     <div class="col">
                                         <div class="d-flex mx-auto flex-column ">
-                                            <div class="col mx-auto text-left">Koszt:
-                                                <div class="col mx-auto text-left">osoba dorosła  <td th:text="${tour.getPriceForAdult()}"/>
+                                            <div class="col mx-auto text-left">Cost:
+                                                <div class="col mx-auto text-left">Adult  <td th:text="${tour.getPriceForAdult()}"/>
                                                     </div>
-                                                         <div class="col mx-auto text-left">dziecko  <td th:text="${tour.getPriceForChild()}"/>
+                                                         <div class="col mx-auto text-left">Child  <td th:text="${tour.getPriceForChild()}"/>
                                                     </div>
                                                 <div>
                                             </div>
@@ -67,19 +67,18 @@ http://www.templatemo.com/tm-409-travel
                                 </div>
                             <td>
                             <a th:href="@{/tour/{id}(id=${tour.getId()})}">
-                                <button class="btn-sm ">Sprawdż Szczegóły</button>
+                                <button class="btn-sm ">Details</button>
                             </a>
                             </td>
                             <a th:href="@{/order/{id}(id=${tour.getId()})}">
-                                <button class="btn-sm">Kup</button>
+                                <button class="btn-sm">Buy</button>
                             </a>
                             <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edit</button>
                             </a>
                             <a th:href="@{/copytour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Copy</button>
                             </a>
-
 
                         </div>
                         </article>
@@ -89,9 +88,6 @@ http://www.templatemo.com/tm-409-travel
                 </div>
             </div>
         </div>
-
-
-
 
         <div class="partner-list">
             <div class="container">
@@ -139,28 +135,6 @@ http://www.templatemo.com/tm-409-travel
         <script src="/js/bootstrap.js"></script>
         <script src="/js/plugins.js"></script>
         <script src="/js/main.js"></script>
-
-        <!-- Google Map -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="/js/vendor/jquery.gmap3.min.js"></script>
-
-        <!-- Google Map Init-->
-        <script type="text/javascript">
-            jQuery(function($){
-                $('.first-map, .map-holder').gmap3({
-                    marker:{
-                        address: '16.8496189,96.1288854'
-                    },
-                        map:{
-                        options:{
-                        zoom: 16,
-                        scrollwheel: false,
-                        streetViewControl : true
-                        }
-                    }
-                });
-            });
-        </script>
         <!-- templatemo 409 travel -->
     </body>
 </html>

@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/layout}">
 <head>
     <meta charset="utf-8">
-    <title>Travel Responsive Web Template</title>
+    <title>Login</title>
     <meta name="description" content="">
     <!--
     Travel Template
@@ -40,7 +40,7 @@
             <p th:if="${param.error}" th:text="Podany login lub hasło są niepoprawne"></p>
 
 
-            <h3 class="widget-title">Zaloguj się</h3>
+            <h3 class="widget-title">Sign in</h3>
             <p>
                 <label for="inputLogin">Login</label>
                 <input type="text" id="inputLogin" name="username" th:required="required">
@@ -49,12 +49,11 @@
                 <label for="inputPassword">Hasło</label>
                 <input type="password" id="inputPassword" name="password" th:required="required">
             </p>
-            <button type="submit">Zaloguj</button>
-            <a th:href="@{/registration}" ><button type="button">Zarejestruj się</button></a>
+            <button type="submit">Login</button>
+            <a th:href="@{/registration}" ><button type="button">Register</button></a>
         </form>
     </div>
 </div>
-
 
 <div id="footer" class="alt" th:include="footer :: title-footer"/>
 

@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/layout}">
     <head>
         <meta charset="utf-8">
-        <title>Travel Responsive Web Template</title>
+        <title>Travel Agency</title>
         <meta name="description" content="">
 <!-- 
 Travel Template
@@ -52,8 +52,6 @@ http://www.templatemo.com/tm-409-travel
             </ul>
         </div> <!-- /.flexslider -->
 
-        
-        
         <div class="container" >
             <div class="row">
                 <div class="our-listing owl-carousel">
@@ -69,7 +67,6 @@ http://www.templatemo.com/tm-409-travel
                             <p><span th:text="${tours.arrivalDate}"></span></p>
                             <p><span th:text="${tours.departureDate}"></span></p>
                             <a th:href="@{/tour/{id}(id=${tours.getId()})}" class="price-btn">Details</a>
-
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
                 </div> <!-- /.our-listing -->

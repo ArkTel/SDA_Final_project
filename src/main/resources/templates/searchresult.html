@@ -4,137 +4,138 @@
       xmlns:layout="ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="thymeleaf.org/extras/spring-security"
       layout:decorate="~{layouts/layout}">
-    <head>
-        <meta charset="utf-8">
-        <title>Search result</title>
-        <meta name="description" content="">
-<!--
-Travel Template
-http://www.templatemo.com/tm-409-travel
--->
-        <meta name="viewport" content="width=device-width">
-		<meta name="author" content="templatemo">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="utf-8">
+    <title>Search result</title>
+    <meta name="description" content="">
+    <!--
+    Travel Template
+    http://www.templatemo.com/tm-409-travel
+    -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="templatemo">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.css">
-        <link rel="stylesheet" href="/css/animate.css">
-        <link rel="stylesheet" href="/css/templatemo_misc.css">
-        <link rel="stylesheet" href="/css/templatemo_style.css">
-        <link rel="stylesheet" href="/css/style_tour.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/templatemo_misc.css">
+    <link rel="stylesheet" href="/css/templatemo_style.css">
+    <link rel="stylesheet" href="/css/style_tour.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-        <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
 
-        <div id="header" class="alt" th:include="menu :: title-menu" />  <!-- /.site-header -->
+<div id="header" class="alt" th:include="menu :: title-menu"/>  <!-- /.site-header -->
 
-        <div class="page-top" id="templatemo_contact">
-        </div> <!-- /.page-header -->
+<div class="page-top" id="templatemo_contact">
+</div> <!-- /.page-header -->
 
-        <div class="contact-page">
-            <div class="container">
-                <div class="d-flex flex-column">
-                        <h3 class="widget-title">Search result:</h3>
-                    <br>
-                    <tr th:each="tour:${searchresult}">
-                    <section class="d-flex flex-column">
-                        <article class="box-icon-classic">
+<div class="contact-page">
+    <div class="container">
+        <div class="d-flex flex-column">
+            <h3 class="widget-title">Search result:</h3>
+            <br>
+            <tr th:each="tour:${searchresult}">
+                <section class="d-flex flex-column">
+                    <article class="box-icon-classic">
                         <div class="col-sm-4 col-lg-12 container mx-auto p-2">
-                                <div class="d-flex">
-                                    <div class="col mx-auto text-left text-">Cel podróży:
-                                        <td th:text="${tour.to}"/>
-                                    </div>
-                                    <div class="col mx-auto text-left">Miejsce wylotu:
-                                        <td th:text="${tour.getFrom()}"/>
-                                    </div>
-                                    <div class="col">
-                                        <div class="d-flex mx-auto flex-column ">
-                                            <div class="col mx-auto text-left">Koszt:
-                                                <div class="col mx-auto text-left">osoba dorosła  <td th:text="${tour.getPriceForAdult()}"/>
-                                                    </div>
-                                                         <div class="col mx-auto text-left">dziecko  <td th:text="${tour.getPriceForChild()}"/>
-                                                    </div>
-                                                <div>
+                            <div class="d-flex">
+                                <div class="col mx-auto text-left text-">Destination:
+                                    <td th:text="${tour.to}"/>
+                                </div>
+                                <div class="col mx-auto text-left">Place of departure:
+                                    <td th:text="${tour.getFrom()}"/>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex mx-auto flex-column ">
+                                        <div class="col mx-auto text-left">Cost:
+                                            <div class="col mx-auto text-left">Adult
+                                                <td th:text="${tour.getPriceForAdult()}"/>
+                                            </div>
+                                            <div class="col mx-auto text-left">Child
+                                                <td th:text="${tour.getPriceForChild()}"/>
+                                            </div>
+                                            <div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                             <td>
-                            <a th:href="@{/tour/{id}(id=${tour.getId()})}">
-                                <button class="btn-sm ">Sprawdż Szczegóły</button>
-                            </a>
+                                <a th:href="@{/tour/{id}(id=${tour.getId()})}">
+                                    <button class="btn-sm ">Details</button>
+                                </a>
                             </td>
-                            <a href="#">
-                                <button class="btn-sm">Kup</button>
+                            <a th:href="@{/order/{id}(id=${tour.getId()})}">
+                                <button class="btn-sm">Buy</button>
                             </a>
                             <a th:href="@{/edittour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edytuj</button>
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Edit</button>
                             </a>
                             <a th:href="@{/copytour/{id}(id=${tour.getId()})}">
-                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Kopiuj</button>
+                                <button sec:authorize="hasRole('ADMIN')" class="btn-sm">Copy</button>
                             </a>
-
-
                         </div>
-                        </article>
-                        <br>
-                    </section>
-                    </tr>
-                </div>
-            </div>
+                    </article>
+                    <br>
+                </section>
+            </tr>
         </div>
-        <div class="partner-list">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner1.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner2.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner3.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner1.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-                            <img src="/images/partners/partner2.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item last">
-                            <img src="/images/partners/partner3.png" alt="">
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.partner-list -->
+    </div>
+</div>
+<div class="partner-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner1.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item">
+                    <img src="/images/partners/partner2.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="partner-item last">
+                    <img src="/images/partners/partner3.png" alt="">
+                </div> <!-- /.partner-item -->
+            </div> <!-- /.col-md-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.partner-list -->
 
+<div id="footer" class="alt" th:include="footer :: title-footer"/>
 
-
-        <div id="footer" class="alt" th:include="footer :: title-footer"/>
-
-        <script src="/js/vendor/jquery-1.11.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="/js/bootstrap.js"></script>
-        <script src="/js/plugins.js"></script>
-        <script src="/js/main.js"></script>
-        <!-- templatemo 409 travel -->
-    </body>
+<script src="/js/vendor/jquery-1.11.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+<!-- templatemo 409 travel -->
+</body>
 </html>

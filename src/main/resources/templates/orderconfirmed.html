@@ -6,7 +6,7 @@
       layout:decorate="~{layouts/layout}">
 <head>
     <meta charset="utf-8">
-    <title>ORDER TOUR</title>
+    <title>Order confirmed</title>
     <meta name="description" content="">
     <!--
     Travel Template
@@ -45,19 +45,18 @@
 
                 </div>
                 <div class="text-center">
-                    <h3 class="widget-title">Dziękujem za skorzystanie z naszych usług!</h3><br>
+                    <h3 class="widget-title">Thank you for using our services!</h3><br>
                     <a th:href="@{/index}">
-                        <button class="btn-sm ">Strona główna</button>
+                        <button class="btn-sm ">Home page</button>
                     </a>
                     <a th:href="@{/logout}">
-                        <button class="btn-sm ">Wyloguj</button>
+                        <button class="btn-sm ">Logout</button>
                     </a>
                 </div> <!-- /.contact-form -->
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="partner-list">
     <div class="container">
@@ -95,7 +94,6 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div> <!-- /.partner-list -->
-
 
 <div id="footer" class="alt" th:include="footer :: title-footer"/>
 

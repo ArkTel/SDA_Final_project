@@ -46,17 +46,12 @@
 
                     <div class="col-md-12"><!-- first column -->
                         <div class="widget-item">
-
-
                             <h3 class="widget-title">Offer details</h3>
                             <div class="sample-thumb">
                                 <img th:src="${tour.imgLink}" alt="about us" title="about us">
                             </div> <!-- /.sample-thumb -->
-
-
                             <p th:text="${tour.tourDescription}"></p>
                         </div>
-
 
                         <div class="col-sm-4 col-lg-4">
                             <article class="box-icon-classic">
@@ -116,7 +111,8 @@
                             <article class="box-icon-classic">
                                 <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                                     <div class="unit-body">
-                                        <h5 class="box-icon-classic-title"><strong>Price for a adult ticket: </strong></h5>
+                                        <h5 class="box-icon-classic-title"><strong>Price for a adult ticket: </strong>
+                                        </h5>
                                         <p class="box-icon-classic-text" th:text="${tour.priceForAdult}"></p>
                                     </div>
                                 </div>
@@ -127,7 +123,8 @@
                             <article class="box-icon-classic">
                                 <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                                     <div class="unit-body">
-                                        <h5 class="box-icon-classic-title"><strong>Price for a child ticket: </strong></h5>
+                                        <h5 class="box-icon-classic-title"><strong>Price for a child ticket: </strong>
+                                        </h5>
                                         <p class="box-icon-classic-text" th:text="${tour.priceForChild}"></p>
                                     </div>
                                 </div>
@@ -138,7 +135,8 @@
                             <article class="box-icon-classic">
                                 <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                                     <div class="unit-body">
-                                        <h5 class="box-icon-classic-title"><strong>Available places for adults: </strong></h5>
+                                        <h5 class="box-icon-classic-title"><strong>Available places for
+                                            adults: </strong></h5>
                                         <p class="box-icon-classic-text" th:text="${tour.availablePlacesForAdult}"></p>
                                     </div>
                                 </div>
@@ -149,7 +147,8 @@
                             <article class="box-icon-classic">
                                 <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                                     <div class="unit-body">
-                                        <h5 class="box-icon-classic-title"><strong>Available places for children: </strong>
+                                        <h5 class="box-icon-classic-title"><strong>Available places for
+                                            children: </strong>
                                         </h5>
                                         <p class="box-icon-classic-text"
                                            th:text="${tour.availablePlacesForChildren}"></p>
@@ -251,7 +250,7 @@
     </div> <!-- /.partner-list -->
 
     <div id="footer" class="alt" th:include="footer :: title-footer"/>
-
-    <!-- templatemo 409 travel -->
+</div>
+<!-- templatemo 409 travel -->
 </body>
 </html>

@@ -46,14 +46,14 @@
                 </div>
                 <div>
                     <div class="contact-form">
-                            <h3>Podsumowanie</h3>
+                            <h3>Summary</h3>
                             <p>
-                                Kwota do zapłaty za rezerwację: <strong><span th:text="${sum}"></span></strong><br>
-                                Zarezerwowane miejsca dla osób dorosłych: <strong><span th:text="${order.orderPlacesForAdults}"></span></strong><br>
-                                Zarezerwowane miejsca dla dzieci: <strong><span th:text="${order.orderPlacesForChildren}"></span></strong><br>
+                                Amount to be paid for the reservation: <strong><span th:text="${sum}"></span></strong><br>
+                                Reserved place for adults: <strong><span th:text="${order.orderPlacesForAdults}"></span></strong><br>
+                                Reserved place for children: <strong><span th:text="${order.orderPlacesForChildren}"></span></strong><br>
                             </p>
                         <a th:href="@{/orderconfirmed}">
-                            <button class="btn-sm ">Rezerwuj</button>
+                            <button class="btn-sm ">Book it</button>
                         </a>
                     </div>
                 </div> <!-- /.contact-form -->
@@ -61,7 +61,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="partner-list">
     <div class="container">

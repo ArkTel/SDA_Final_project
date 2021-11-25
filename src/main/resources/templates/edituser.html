@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/layout}">
 <head>
     <meta charset="utf-8">
-    <title>Travel Responsive Web Template</title>
+    <title>Edit user</title>
     <meta name="description" content="">
     <!--
     Travel Template
@@ -36,7 +36,7 @@
 </div> <!-- /.page-header -->
 <div class="middle-content">
     <div class="container" th:object="${user}">
-        <h3 class="widget-title">Register</h3>
+        <h3 class="widget-title">Edit</h3>
         <form name="contactform" id="contactform"  th:action="@{/edituser/{id}(id=${user.getId()})}" method="post">
             <div class="container-fluid col-lg-12">
                 <div class="col-lg-4"> </div>
@@ -69,11 +69,10 @@
                 <div class="container-fluid col-lg-4"></div>
             </div>
 
-            <button type="submit">Zapisz zmiany</button>
+            <button type="submit">Save</button>
         </form>
     </div>
 </div>
-
 
 <div id="footer" class="alt" th:include="footer :: title-footer"/>
 
